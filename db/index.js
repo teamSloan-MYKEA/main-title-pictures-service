@@ -9,51 +9,22 @@ let connection = mysql.createConnection({
   multipleStatements: true
 });
 
-const Seeder = require('mysql-db-seed').Seeder;
-const seed = new Seeder(
-  10,
-  'localhost',
-  'root',
-  '',
-  'mykea_main_title_pictures'
-);
+const seedText = () => {
+  for (let i = 0; i < 100; i++) {
+    let sentence = faker.lorem.sentence(30);
+    let sql = 'INSERT INTO descriptions(description) VALUES(?)';
+    connection.query(sql, [sentence], (err, results, fields) => {
+      if (err) {
+        return console.error(err.message);
+      }
+      console.log('Descriptions table seeded. Affected rows:', results.affectedRows);
+    });
+  }
+  connection.end();
+};
 
-(async () => {
-  await seed.seed(
-    100,
-    'descriptions',
-    {
-      description: faker.lorem.sentence(30)
-    }
-  )
-  seed.exit();
-  process.exit();
-})();
+seedText();
 
-
-
-// let questionMarks = '(?),'.repeat(100).slice(0, -1);
-
-// // Seed database with descriptions
-// const seedText = function () {
-//   // Description length of 35 words
-//   const sql = `INSERT INTO descriptions(description)
-//   VALUES(?),${questionMarks}`;
-
-//   let words = _.range(1, 101).map(number => number = faker.lorem.sentence(30));
-//   console.log(questionMarks);
-
-//   connection.query(sql, [words], (err, results, fields) => {
-//     if (err) {
-//       return console.error(err.message);
-//     }
-//     console.log('Descriptions table seeded. Affected rows:', results.affectedRows);
-//   });
-
-//   connection.end();
-// }
-
-// seedText();
 
 // // Seed database with images
 // const seedImages = function () {

@@ -11,8 +11,6 @@
   "dependencies": {
     "faker": "^4.1.0",
     "mysql": "^2.18.1",
-    "mysql2": "^2.1.0",
-    "sequelize": "^6.3.4",
     "underscore": "^1.10.2"
   },
   "devDependencies": {
