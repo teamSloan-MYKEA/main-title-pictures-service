@@ -18,3 +18,5 @@ CREATE TABLE pictures (
   PRIMARY KEY (id),
   FOREIGN KEY (description_id) REFERENCES descriptions (id)
 );
+
+-- Run this command to drop old and create new database: mysql < db/schema.sql
