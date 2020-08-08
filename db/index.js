@@ -5,7 +5,6 @@ const connection = mysql.createConnection({
   user: 'root',
   password: '',
   database: 'mykea_main_title_pictures',
-  multipleStatements: true,
 });
 
 const getPictures = (id) => new Promise((resolve, reject) => {
