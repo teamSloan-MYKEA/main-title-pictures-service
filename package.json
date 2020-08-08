@@ -1,17 +1,38 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
-  "author": "",
-  "license": "",
+  "name": "main-title-pictures-service",
+  "description": "> Project description",
+  "author": "Zachary Mansell",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
+    "seed": "node db/index.js",
+    "schema": "mysql < db/schema.sql"
   },
   "dependencies": {
+    "faker": "^4.1.0",
+    "mysql": "^2.18.1",
+    "underscore": "^1.10.2"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
-  }
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "mysql-db-seed": "0.0.4"
+  },
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hrr47-fec-omalley/main-title-pictures-service.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hrr47-fec-omalley/main-title-pictures-service/issues"
+  },
+  "homepage": "https://github.com/hrr47-fec-omalley/main-title-pictures-service#readme"
 }
