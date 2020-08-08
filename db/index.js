@@ -27,7 +27,6 @@ const seedText = () => {
 };
 
 const seedPictures = () => {
-  let promise = [];
   new Promise(function (resolve, reject) {
     // Array of urls
     let urlString = 'https://mykea-main-title-pictures.s3.us-east-2.amazonaws.com/';
@@ -125,7 +124,7 @@ const createPictures = () => {
   });
 };
 
-// Drop, Create, Add, Populate DB
+// Seed DB
 seedText()
   .then(results => seedPictures())
   .then(results => connection.end())
