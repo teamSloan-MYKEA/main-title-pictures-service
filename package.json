@@ -8,7 +8,7 @@
   },
   "scripts": {
     "server": "nodemon server/index.js",
-    "seed": "node db/index.js",
+    "seed": "node db/seed.js",
     "schema": "mysql < db/schema.sql",
     "test": "jest"
   },

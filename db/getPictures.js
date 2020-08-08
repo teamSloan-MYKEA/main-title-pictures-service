@@ -13,10 +13,8 @@ const getPictures = (id) => new Promise((resolve, reject) => {
               description_id = ${id} LIMIT 6`;
   connection.query(sql, (err, results) => {
     if (err) {
-      console.log(err);
       return reject(err);
     }
-    console.log(results);
     resolve(results);
   });
 });
