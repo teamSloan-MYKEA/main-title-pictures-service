@@ -50,7 +50,6 @@ const seedPictures = () => new Promise((resolve, reject) => {
 });
 
 // Seed DB
-
 seedText()
   .then(() => seedPictures())
   .then(() => connection.end())

@@ -9,13 +9,14 @@ const connection = mysql.createConnection({
 });
 
 const getPictures = (id) => new Promise((resolve, reject) => {
-  const sql = `SELECT * FROM pictures WHERE
-              description_id = ${id} LIMIT 6`;
+  const sql = `SELECT * FROM pictures p INNER JOIN descriptions d
+              ON p.description_id = ${id} AND
+              p.description_id = d.id LIMIT 6`;
   connection.query(sql, (err, results) => {
     if (err) {
       return reject(err);
     }
-    resolve(results);
+    return resolve(results);
   });
 });
 
