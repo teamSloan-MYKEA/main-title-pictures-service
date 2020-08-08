@@ -1,8 +1,5 @@
-const db = require('../index.js');
+jest.mock('./getPictures.js');
 
-describe('DB', () => {
-  test('DB should return an object from the query', () => db.getPictures(1)
-    .then((data) => {
-      expect(data).toBeDefined();
-    }));
-});
+// it('works with promises', () => {
+//   expect.assertions(1);
+// });
