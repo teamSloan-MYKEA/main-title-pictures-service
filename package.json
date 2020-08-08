@@ -28,7 +28,9 @@
     "eslint-plugin-react-hooks": "^4.0.0",
     "jest": "^26.2.2",
     "mysql-db-seed": "0.0.4",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   },
   "version": "1.0.0",
   "main": ".eslintrc.js",
