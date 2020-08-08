@@ -23,11 +23,8 @@ const seedText = () => {
         resolve(results);
       });
     }
-    // connection.end();
   });
 };
-
-// seedText();
 
 const seedPictures = () => {
   let promise = [];
@@ -56,6 +53,79 @@ const seedPictures = () => {
   });
 };
 
+const dropDB = () => {
+  return new Promise(function (resolve, reject) {
+    const sql = 'DROP DATABASE IF EXISTS mykea_main_title_pictures';
+    connection.query(sql, (err, results) => {
+      if (err) {
+        console.log(err);
+        return reject(err);
+      }
+      console.log(results);
+      resolve(results);
+    });
+  });
+};
+
+const createDB = () => {
+  new Promise(function (resolve, reject) {
+    const sql = 'CREATE DATABASE mykea_main_title_pictures';
+    connection.query(sql, (err, results) => {
+      if (err) {
+        return reject(err);
+      }
+      resolve(results);
+    });
+  });
+};
+
+const useDB = () => {
+  new Promise(function (resolve, reject) {
+    const sql = 'USE mykea_main_title_pictures';
+    connection.query(sql, (err, results) => {
+      if (err) {
+        return reject(err);
+      }
+      resolve(results);
+    });
+  });
+};
+
+const createDescriptions = () => {
+  new Promise(function (resolve, reject) {
+    const sql = `CREATE TABLE descriptions (
+      id INT NOT NULL AUTO_INCREMENT,
+      description VARCHAR(255) NOT NULL,
+      PRIMARY KEY (id)
+    )`;
+    connection.query(sql, (err, results) => {
+      if (err) {
+        return reject(err);
+      }
+      resolve(results);
+    });
+  });
+};
+
+const createPictures = () => {
+  new Promise(function (resolve, reject) {
+    const sql = `CREATE TABLE pictures (
+      id INT NOT NULL AUTO_INCREMENT,
+      url TEXT,
+      description_id INT NOT NULL,
+      PRIMARY KEY (id),
+      FOREIGN KEY (description_id) REFERENCES descriptions (id)
+    )`;
+    connection.query(sql, (err, results) => {
+      if (err) {
+        return reject(err);
+      }
+      resolve(results);
+    });
+  });
+};
+
+// Drop, Create, Add, Populate DB
 seedText()
   .then(results => seedPictures())
   .then(results => connection.end())
