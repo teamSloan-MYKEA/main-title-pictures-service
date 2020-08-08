@@ -1,20 +1,22 @@
+/* eslint-disable no-console */
 const _ = require('underscore');
 const faker = require('faker');
 const mysql = require('mysql');
-let connection = mysql.createConnection({
+
+const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
   database: 'mykea_main_title_pictures',
-  multipleStatements: true
+  multipleStatements: true,
 });
 
 const seedText = () => {
-  return new Promise(function (resolve, reject) {
+  return new Promise((resolve, reject) => {
     for (let i = 0; i < 100; i++) {
-      let sentence = faker.lorem.sentence(30);
-      let sql = 'INSERT INTO descriptions(description) VALUES(?)';
-      connection.query(sql, [sentence], (err, results, fields) => {
+      const sentence = faker.lorem.sentence(30);
+      const sql = 'INSERT INTO descriptions(description) VALUES(?)';
+      connection.query(sql, [sentence], (err, results) => {
         if (err) {
           console.error(err.message);
           return reject(err);
@@ -27,7 +29,7 @@ const seedText = () => {
 };
 
 const seedPictures = () => {
-  new Promise(function (resolve, reject) {
+  return new Promise((resolve, reject) => {
     // Array of urls
     let urlString = 'https://mykea-main-title-pictures.s3.us-east-2.amazonaws.com/';
     let urlsArray = _.range(1, 36).map(number => `${urlString}${String(number).padStart(2, '0')}.jpg`);
@@ -52,9 +54,10 @@ const seedPictures = () => {
   });
 };
 
-const dropDB = () => {
-  return new Promise(function (resolve, reject) {
-    const sql = 'DROP DATABASE IF EXISTS mykea_main_title_pictures';
+const getPictures = (id) => {
+  return new Promise((resolve, reject) => {
+    const sql = `SELECT * FROM pictures WHERE
+                description_id = ${id} LIMIT 6`;
     connection.query(sql, (err, results) => {
       if (err) {
         console.log(err);
@@ -66,66 +69,9 @@ const dropDB = () => {
   });
 };
 
-const createDB = () => {
-  new Promise(function (resolve, reject) {
-    const sql = 'CREATE DATABASE mykea_main_title_pictures';
-    connection.query(sql, (err, results) => {
-      if (err) {
-        return reject(err);
-      }
-      resolve(results);
-    });
-  });
-};
-
-const useDB = () => {
-  new Promise(function (resolve, reject) {
-    const sql = 'USE mykea_main_title_pictures';
-    connection.query(sql, (err, results) => {
-      if (err) {
-        return reject(err);
-      }
-      resolve(results);
-    });
-  });
-};
-
-const createDescriptions = () => {
-  new Promise(function (resolve, reject) {
-    const sql = `CREATE TABLE descriptions (
-      id INT NOT NULL AUTO_INCREMENT,
-      description VARCHAR(255) NOT NULL,
-      PRIMARY KEY (id)
-    )`;
-    connection.query(sql, (err, results) => {
-      if (err) {
-        return reject(err);
-      }
-      resolve(results);
-    });
-  });
-};
-
-const createPictures = () => {
-  new Promise(function (resolve, reject) {
-    const sql = `CREATE TABLE pictures (
-      id INT NOT NULL AUTO_INCREMENT,
-      url TEXT,
-      description_id INT NOT NULL,
-      PRIMARY KEY (id),
-      FOREIGN KEY (description_id) REFERENCES descriptions (id)
-    )`;
-    connection.query(sql, (err, results) => {
-      if (err) {
-        return reject(err);
-      }
-      resolve(results);
-    });
-  });
-};
-
 // Seed DB
+
 seedText()
-  .then(results => seedPictures())
-  .then(results => connection.end())
-  .catch(err => console.log(err));
+  .then(() => seedPictures())
+  .then(() => connection.end())
+  .catch((err) => console.log(err));

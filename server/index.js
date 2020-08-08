@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+// const db = require('../db/index.js');
 
-app.get('/', (req, res) => {
-  res.send('Hello from express!');
+// Use express params
+app.get('/:id', (req, res) => {
+  res.send(`Id: ${req.params.id}`);
 });
 
 app.listen(port, () => {
