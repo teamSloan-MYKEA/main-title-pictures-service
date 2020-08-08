@@ -39,6 +39,14 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true,
+      "shared-node-browser": true,
+      "jest": true
+    }
+  },
   "version": "1.0.0",
   "main": ".eslintrc.js",
   "repository": {
