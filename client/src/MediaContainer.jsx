@@ -12,12 +12,12 @@ function MediaContainer({ image }) {
   `;
   const Img = styled.img`
     object-fit: cover;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    max-width: 100%;
+    width: 10%;
+    height: 10%;
+    // position: absolute;
+    // left: 0;
+    // top: 0;
+    // max-width: 100%;
   `;
   return (
     <div>

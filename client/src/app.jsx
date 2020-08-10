@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Reset } from 'styled-reset';
 import RangeMediaGrid from './RangeMediaGrid.jsx';
 
 class App extends Component {
@@ -32,7 +33,10 @@ class App extends Component {
   render() {
     const { images } = this.state;
     return (
-      <RangeMediaGrid images={images} />
+      <div>
+        <Reset />
+        <RangeMediaGrid images={images} />
+      </div>
     );
   }
 }
