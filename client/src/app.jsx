@@ -20,7 +20,12 @@ class App extends Component {
     const { productId } = this.state;
     axios.get(`/${productId}`)
       .then((response) => {
-        console.log(response);
+        response.data.forEach((datum) => {
+          this.setState(({ images }) => ({
+            images: images.concat(datum),
+          }
+          ));
+        });
       });
   }
 
