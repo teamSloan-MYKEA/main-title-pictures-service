@@ -7,7 +7,7 @@ function RangeRevampMediaGrid({ images }) {
     <div>
       <MediaContainer />
       {images.map((image) => {
-        return <MediaContainer image={image} />;
+        return <MediaContainer image={image.url} />;
       })}
     </div>
   );
