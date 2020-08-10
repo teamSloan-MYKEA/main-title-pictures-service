@@ -8,7 +8,6 @@ class App extends Component {
     super(props);
     this.state = {
       images: [],
-      collapsedImages: [],
       isCollapsed: true,
       productId: 1,
     };
@@ -38,16 +37,19 @@ class App extends Component {
     this.setState(({ isCollapsed }) => ({
       isCollapsed: !isCollapsed,
     }));
-
-    console.log("Button was clicked", this.state.isCollapsed);
   }
 
   render() {
-    const { images } = this.state;
+    const { images, isCollapsed } = this.state;
     return (
       <div>
         <Reset />
-        <RangeMediaGrid images={images} handleClick={this.handleShowMoreClick} />
+        <RangeMediaGrid
+          images={
+            isCollapsed ? images.slice(0, 4) : images
+          }
+          handleClick={this.handleShowMoreClick}
+        />
       </div>
     );
   }
