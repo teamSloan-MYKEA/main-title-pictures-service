@@ -20,9 +20,9 @@ class App extends Component {
     const { productId } = this.state;
     axios.get(`/${productId}`)
       .then((response) => {
-        response.data.forEach((datum) => {
+        response.data.forEach((imageObj) => {
           this.setState(({ images }) => ({
-            images: images.concat(datum),
+            images: images.concat(imageObj),
           }
           ));
         });
@@ -30,8 +30,9 @@ class App extends Component {
   }
 
   render() {
+    const { images } = this.state;
     return (
-      <RangeMediaGrid />
+      <RangeMediaGrid images={images} />
     );
   }
 }
