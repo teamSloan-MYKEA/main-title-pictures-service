@@ -7,20 +7,21 @@ class App extends Component {
     super(props);
     this.state = {
       images: [],
-      productId: 0,
+      productId: 1,
     };
     this.getImages = this.getImages.bind(this);
   }
 
+  componentDidMount() {
+    this.getImages();
+  }
+
   getImages() {
+    const { productId } = this.state;
     axios.get(`/${productId}`)
       .then((response) => {
         console.log(response);
-      })
-  }
-
-  componentDidMount() {
-    this.getImages();
+      });
   }
 
   render() {
