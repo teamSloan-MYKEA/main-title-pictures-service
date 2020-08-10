@@ -24,8 +24,7 @@ class App extends Component {
           this.setState(({ images }) => ({
             images: images.concat(imageObj),
           }
-          ))
-          console.log("hello")
+          ));
         });
       });
   }
