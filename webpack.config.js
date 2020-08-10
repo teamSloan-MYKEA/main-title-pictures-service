@@ -15,11 +15,14 @@ module.exports = {
         options: {
           presets: ['@babel/env', '@babel/preset-react'],
           plugins: [
-            'bable-plugin-styled-components',
+            'babel-plugin-styled-components',
           ],
         },
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   watch: true,
 };

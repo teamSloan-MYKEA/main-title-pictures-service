@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Reset } from 'styled-reset';
-import RangeMediaGrid from './RangeMediaGrid.jsx';
+import RangeMediaGrid from './RangeMediaGrid';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       images: [],
+      collapsedImages: [],
+      isCollapsed: true,
       productId: 1,
     };
     this.getImages = this.getImages.bind(this);
+    this.handleShowMoreClick = this.handleShowMoreClick.bind(this);
   }
 
   componentDidMount() {
@@ -30,12 +33,21 @@ class App extends Component {
       });
   }
 
+  handleShowMoreClick(e) {
+    e.preventDefault();
+    this.setState(({ isCollapsed }) => ({
+      isCollapsed: !isCollapsed,
+    }));
+
+    console.log("Button was clicked", this.state.isCollapsed);
+  }
+
   render() {
     const { images } = this.state;
     return (
       <div>
         <Reset />
-        <RangeMediaGrid images={images} />
+        <RangeMediaGrid images={images} handleClick={this.handleShowMoreClick} />
       </div>
     );
   }

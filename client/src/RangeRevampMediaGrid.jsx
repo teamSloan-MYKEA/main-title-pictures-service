@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import MediaContainer from './MediaContainer.jsx';
+import MediaContainer from './MediaContainer';
 
 function RangeRevampMediaGrid({ images }) {
   const Div = styled.div`
