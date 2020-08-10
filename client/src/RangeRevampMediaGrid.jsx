@@ -7,6 +7,7 @@ function RangeRevampMediaGrid({ images }) {
   const Div = styled.div`
     display: flex;
     flex-wrap: wrap;
+    width: 100%
   `;
   return (
     <Div>

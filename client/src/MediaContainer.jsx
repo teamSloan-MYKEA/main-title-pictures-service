@@ -4,28 +4,24 @@ import styled from 'styled-components';
 
 function MediaContainer({ image }) {
   const Div = styled.div`
-    width: 100%;
+    width: 50%;
     position: relative;
     height: auto;
-    display: block;
     box-sizing: border-box;
   `;
   const Img = styled.img`
-    object-fit: cover;
-    width: 10%;
-    height: 10%;
+    // object-fit: cover;
+    // width: 100%;
+    // height: 100%;
     // position: absolute;
     // left: 0;
     // top: 0;
-    // max-width: 100%;
+    max-width: 100%;
   `;
   return (
-    <div>
-      <Div>
-        <Img className="range-revamp-image" src={image} alt="IKEA furniture" />
-      </Div>
-
-    </div>
+    <Div>
+      <Img className="range-revamp-image" src={image} alt="IKEA furniture" />
+    </Div>
   );
 }
 MediaContainer.propTypes = {
