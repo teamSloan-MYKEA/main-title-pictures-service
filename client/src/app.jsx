@@ -1,5 +1,5 @@
-/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import RangeMediaGrid from './RangeMediaGrid.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>Hello, World!</div>
+      <RangeMediaGrid />
     );
   }
 }
