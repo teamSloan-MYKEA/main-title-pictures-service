@@ -1,7 +1,8 @@
 import React from 'react';
+import RangeRevampMediaGrid from './RangeRevampMediaGrid.jsx';
 
 function RangeMediaGrid() {
-  return <div>Hello from RangeMediaGrid</div>;
+  return <RangeRevampMediaGrid />;
 }
 
 export default RangeMediaGrid;
