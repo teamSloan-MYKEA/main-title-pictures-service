@@ -4,15 +4,17 @@ import styled from 'styled-components';
 import MediaContainer from './MediaContainer';
 
 function RangeRevampMediaGrid({ images }) {
-  const Div = styled.div`
+  const Grid = styled.div`
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    margin-left: -.625rem;
+    margin-right: -.625rem;
+    background-color: green;
   `;
   return (
-    <Div>
+    <Grid>
       {images.map((image) => <MediaContainer image={image.url} />)}
-    </Div>
+    </Grid>
   );
 }
 RangeRevampMediaGrid.propTypes = {
