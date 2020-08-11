@@ -60,7 +60,7 @@ class App extends Component {
           handleClick={this.handleShowMoreClick}
           showModal={this.showModal}
         />
-        <Modal show={showModal} />
+        <Modal show={showModal} images={images} />
       </div>
     );
   }
