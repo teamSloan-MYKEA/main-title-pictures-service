@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { createGlobalStyle } from 'styled-components';
 import ModalTitle from './Title';
+import ModalContent from './ModalContent';
 
 function Modal({ show, images, onClose }) {
   const ModalContainer = styled.div`
@@ -35,7 +36,7 @@ function Modal({ show, images, onClose }) {
       <GlobalStyle />
       <ModalMain>
         <ModalTitle close={onClose} />
-        <div>Hello Modal!</div>
+        <ModalContent images={images} />
       </ModalMain>
     </ModalContainer>
   );
