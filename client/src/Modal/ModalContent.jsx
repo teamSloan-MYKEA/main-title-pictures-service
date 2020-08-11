@@ -1,6 +1,7 @@
 import React from 'react';
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
+import ScrollIndicator from './ScrollIndicator';
 
 function ModalContent({ images }) {
   return (
@@ -8,6 +9,7 @@ function ModalContent({ images }) {
       <LeftArrow />
       <div>Hello from ModalContent</div>
       <RightArrow />
+      <ScrollIndicator />
     </div>
   );
 }
