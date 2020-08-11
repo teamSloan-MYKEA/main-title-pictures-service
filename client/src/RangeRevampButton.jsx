@@ -18,10 +18,17 @@ function RangeRevampButton({ handleClick }) {
     cursor: pointer;
   `;
   const SpanButtonCopy = styled.span`
-
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    transition-property: opacity, transform, -webkit-transform;
+    transition-timing-function: ease;
   `;
   const ButtonLabel = styled.span`
-
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   `;
   return (
     <Button type="button" onClick={handleClick}>
