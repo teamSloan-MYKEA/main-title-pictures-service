@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Reset } from 'styled-reset';
 import RangeMediaGrid from './RangeMediaGrid';
-import Modal from './Modal/index';
+import Modal from './Modal/ModalDashboard';
 
 class App extends Component {
   constructor(props) {
