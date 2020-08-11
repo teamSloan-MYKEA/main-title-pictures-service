@@ -17,6 +17,7 @@ function MediaContainer({ image }) {
     // left: 0;
     // top: 0;
     max-width: 100%;
+    cursor: pointer;
   `;
   return (
     <Div>
