@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-function MediaContainer({ image }) {
+function MediaContainer({ image, showModal }) {
   const RangeRevampMediaGridMediaContainer = styled.div`
     flex: none;
     margin-left: .625rem;
@@ -31,13 +31,14 @@ function MediaContainer({ image }) {
   return (
     <RangeRevampMediaGridMediaContainer>
       <RangeRevampAspectRatioImage>
-        <Img className="range-revamp-image" src={image} alt="IKEA furniture" />
+        <Img className="range-revamp-image" src={image} alt="IKEA furniture" onClick={() => showModal()} />
       </RangeRevampAspectRatioImage>
     </RangeRevampMediaGridMediaContainer>
   );
 }
 MediaContainer.propTypes = {
   image: PropTypes.instanceOf(Object).isRequired,
+  showModal: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default MediaContainer;

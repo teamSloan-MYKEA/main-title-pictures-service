@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import MediaContainer from './MediaContainer';
 
-function RangeRevampMediaGrid({ images }) {
+function RangeRevampMediaGrid({ images, showModal }) {
   const Grid = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -13,12 +13,13 @@ function RangeRevampMediaGrid({ images }) {
   `;
   return (
     <Grid>
-      {images.map((image) => <MediaContainer image={image.url} />)}
+      {images.map((image) => <MediaContainer image={image.url} showModal={showModal} />)}
     </Grid>
   );
 }
 RangeRevampMediaGrid.propTypes = {
   images: PropTypes.instanceOf(Array).isRequired,
+  showModal: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default RangeRevampMediaGrid;
