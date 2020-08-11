@@ -6,7 +6,6 @@ function LeftArrow() {
   const element = <FontAwesomeIcon icon={faArrowLeft} />;
   return (
     <div>
-      <FontAwesomeIcon icon="check-square" />
       <div>{element}</div>
     </div>
   );
