@@ -1,10 +1,13 @@
 import React from 'react';
+import LeftArrow from './LeftArrow';
 
 function ModalContent({ images }) {
-  const allImages = images;
-  const imagesInView = [];
   return (
-    <div>Hello from ModalContent</div>
+    <div>
+      <LeftArrow />
+      <div>Hello from ModalContent</div>
+
+    </div>
   );
 }
 
