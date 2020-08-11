@@ -11,7 +11,7 @@ class App extends Component {
       images: [],
       isCollapsed: true,
       productId: 1,
-      showModal: false,
+      show: false,
     };
     this.getImages = this.getImages.bind(this);
     this.handleShowMoreClick = this.handleShowMoreClick.bind(this);
@@ -43,13 +43,13 @@ class App extends Component {
   }
 
   showModal() {
-    this.setState({
-      showModal: true,
-    });
+    this.setState(({ show }) => ({
+      show: !show,
+    }));
   }
 
   render() {
-    const { images, isCollapsed, showModal } = this.state;
+    const { images, isCollapsed, show } = this.state;
     return (
       <div>
         <Reset />
@@ -60,7 +60,7 @@ class App extends Component {
           handleClick={this.handleShowMoreClick}
           showModal={this.showModal}
         />
-        <Modal show={showModal} images={images} />
+        <Modal show={show} images={images} onClose={this.showModal} />
       </div>
     );
   }
