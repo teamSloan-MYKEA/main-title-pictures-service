@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import ModalTitle from './Title';
 
 function Modal({ show, images, onClose }) {
@@ -9,23 +9,30 @@ function Modal({ show, images, onClose }) {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    overflow-y: hidden;
     background: rgba(0,0,0,0.6);
   `;
   const ModalMain = styled.section`
     position: fixed;
     background: white;
-    width: 80%;
-    height: auto;
+    width: 100%;
+    height: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  `;
+  const GlobalStyle = createGlobalStyle`
+    body {
+      overflow: hidden;
+    }
   `;
   if (!show) {
     return null;
   }
   return (
     <ModalContainer>
+      <GlobalStyle />
       <ModalMain>
         <ModalTitle close={onClose} />
         <div>Hello Modal!</div>
