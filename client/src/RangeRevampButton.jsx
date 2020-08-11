@@ -6,6 +6,16 @@ function RangeRevampButton({ handleClick }) {
   const Button = styled.button`
     display: block;
     margin: 1rem auto 0;
+    -webkit-appearance: button;
+    height: 2.5rem;
+    padding: 0 1.25rem;
+    font-size: .75rem;
+    line-height: 1.33333;
+    font-weight: 700;
+    box-sizing: border-bow;
+    transition-property: background-color;
+    transition-timing-function: ease;
+    cursor: pointer;
   `;
   const SpanButtonCopy = styled.span`
 
