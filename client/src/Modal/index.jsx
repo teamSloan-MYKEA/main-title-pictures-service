@@ -28,6 +28,11 @@ function Modal({ show, images, onClose }) {
       overflow: hidden;
     }
   `;
+  const ModalTitleContainer = styled.div`
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 1.5625rem 2.3125rem;
+  `;
   if (!show) {
     return null;
   }
@@ -35,7 +40,9 @@ function Modal({ show, images, onClose }) {
     <ModalContainer>
       <GlobalStyle />
       <ModalMain>
-        <ModalTitle close={onClose} />
+        <ModalTitleContainer>
+          <ModalTitle close={onClose} />
+        </ModalTitleContainer>
         <ModalContent images={images} />
       </ModalMain>
     </ModalContainer>
