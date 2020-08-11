@@ -16,6 +16,7 @@ function RangeRevampButton({ handleClick }) {
     transition-property: background-color;
     transition-timing-function: ease;
     cursor: pointer;
+    border-radius: 40px;
   `;
   const SpanButtonCopy = styled.span`
     display: flex;
