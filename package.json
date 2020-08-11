@@ -14,11 +14,15 @@
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "mysql": "^2.18.1",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1",
+    "styled-reset": "^4.2.1",
     "underscore": "^1.10.2"
   },
   "devDependencies": {
@@ -27,6 +31,7 @@
     "@babel/preset-react": "^7.10.4",
     "babel-jest": "^26.2.2",
     "babel-loader": "^8.1.0",
+    "babel-plugin-styled-components": "^1.11.1",
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",

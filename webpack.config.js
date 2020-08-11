@@ -12,9 +12,17 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
         loader: 'babel-loader',
-        options: { presets: ['@babel/env', '@babel/preset-react'] },
+        options: {
+          presets: ['@babel/env', '@babel/preset-react'],
+          plugins: [
+            'babel-plugin-styled-components',
+          ],
+        },
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   watch: true,
 };
