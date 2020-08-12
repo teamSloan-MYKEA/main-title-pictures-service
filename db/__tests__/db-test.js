@@ -9,6 +9,10 @@ describe('DB Pictures Retrieve', () => {
     const response = await db.getPictures(1);
     expect(response.length).toBeLessThanOrEqual(6);
   });
+  test('DB should return objects with correct properties', async () => {
+    const response = await db.getPictures(1);
+    expect(response[0].id).toBeANumber(Number);
+  });
 });
 afterAll(() => {
   db.connection.end();
