@@ -1,3 +1,4 @@
+// Mock data from DB
 const pictures = [
   {
     id: 1,
@@ -13,15 +14,14 @@ const pictures = [
   },
 ];
 
+// Mock GET request
 export default function getPictures(url) {
   return new Promise((resolve, reject) => {
     const pictureId = url;
-    process.nextTick(() => {
-      pictures[pictureId]
-        ? resolve(pictures[pictureId])
-        : reject({
-          error: 'Picture ID not found',
-        }),
-    })
+    process.nextTick(() => (pictures[pictureId]
+      ? resolve(pictures[pictureId])
+      : reject(
+        new Error('Picture ID not found'),
+      )));
   });
 }
