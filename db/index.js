@@ -19,4 +19,5 @@ const getPictures = (id) => new Promise((resolve, reject) => {
   });
 });
 
+module.exports.connection = connection;
 module.exports.getPictures = getPictures;
