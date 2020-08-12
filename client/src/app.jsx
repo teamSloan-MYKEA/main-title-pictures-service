@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
       images: [],
       isCollapsed: true,
-      productId: 1,
+      productId: 2,
       show: false,
     };
     this.getImages = this.getImages.bind(this);
@@ -24,6 +24,8 @@ class App extends Component {
 
   getImages() {
     const { productId } = this.state;
+    // 2nd arg can contain params
+    // Maybe send to /products with request.params as id
     axios.get(`/${productId}`)
       .then((response) => {
         response.data.forEach((imageObj) => {
