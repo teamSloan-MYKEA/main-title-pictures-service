@@ -10,7 +10,8 @@ app.use(express.static(path.join(__dirname, '..', '/client', '/dist')));
 // Use express params
 app.get('/:id', (req, res) => {
   db.getPictures(req.params.id)
-    .then((urls) => res.send(urls));
+    .then((urls) => res.send(urls))
+    .catch(() => res.status(500).send('Internal Server Error'));
 });
 
 app.listen(port, () => {
