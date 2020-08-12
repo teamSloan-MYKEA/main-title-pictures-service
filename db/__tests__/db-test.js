@@ -1,6 +1,6 @@
 const db = require('../index');
 
-describe('DB Pictures Retrieve', () => {
+describe('DB URLs Retrieve', () => {
   test('DB should return an array', async () => {
     const response = await db.getPictures(1);
     expect(response).toBeInstanceOf(Array);
@@ -9,9 +9,9 @@ describe('DB Pictures Retrieve', () => {
     const response = await db.getPictures(1);
     expect(response.length).toBeLessThanOrEqual(6);
   });
-  test('DB should return objects with correct properties', async () => {
+  test('DB should return items with the first property being id', async () => {
     const response = await db.getPictures(1);
-    expect(response[0].id).toBeANumber();
+    expect(Object.keys(response[0])[0]).toEqual('id');
   });
 });
 afterAll(() => {
