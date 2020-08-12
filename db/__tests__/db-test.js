@@ -10,7 +10,6 @@ describe('DB Pictures Retrieve', () => {
     expect(response.length).toBeLessThanOrEqual(6);
   });
 });
-
 afterAll(() => {
   db.connection.end();
 });
