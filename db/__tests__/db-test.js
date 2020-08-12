@@ -11,7 +11,7 @@ describe('DB Pictures Retrieve', () => {
   });
   test('DB should return objects with correct properties', async () => {
     const response = await db.getPictures(1);
-    expect(response[0].id).toBeANumber(Number);
+    expect(response[0].id).toBeANumber();
   });
 });
 afterAll(() => {

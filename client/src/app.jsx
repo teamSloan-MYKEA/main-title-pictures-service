@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
       images: [],
       isCollapsed: true,
-      productId: 2,
+      productId: 1,
       show: false,
     };
     this.getImages = this.getImages.bind(this);
@@ -26,6 +26,7 @@ class App extends Component {
     const { productId } = this.state;
     // 2nd arg can contain params
     // Maybe send to /products with request.params as id
+    // window.location.pathname.split('/')[1]
     axios.get(`/${productId}`)
       .then((response) => {
         response.data.forEach((imageObj) => {
@@ -34,7 +35,8 @@ class App extends Component {
           }
           ));
         });
-      });
+      })
+      .catch((err) => console.error(err.message));
   }
 
   handleShowMoreClick(e) {
