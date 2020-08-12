@@ -26,33 +26,66 @@ const connectionTest = mysqlTest.createConnection({
 // });
 
 // Mock DB
-const testDB = `DROP DATABASE IF EXISTS test_mykea_main_title_pictures_test;
 
-CREATE DATABASE test_mykea_main_title_pictures_test;
-
-USE test_mykea_main_title_pictures_test;
-
-
-CREATE TABLE descriptions (
-  id INT NOT NULL AUTO_INCREMENT,
-  description VARCHAR(255) NOT NULL,
-  PRIMARY KEY (id)
-);
-
-CREATE TABLE pictures (
-  id INT NOT NULL AUTO_INCREMENT,
-  url TEXT,
-  description_id INT NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (description_id) REFERENCES descriptions (id)
-);
-`;
 beforeEach(() => {
-  connectionTest.query(testDB, (err, results) => {
-    if (err) {
-      return console.log(err);
-    }
-    return console.log(results);
+  const drop = 'DROP DATABASE IF EXISTS test_mykea_main_title_pictures_test';
+  const createDB = 'CREATE DATABASE test_mykea_main_title_pictures_test';
+  const use = 'USE test_mykea_main_title_pictures_test';
+  const createDescriptions = `CREATE TABLE descriptions (
+    id INT NOT NULL AUTO_INCREMENT,
+    description VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+  )`;
+  const createPictures = `CREATE TABLE pictures (
+    id INT NOT NULL AUTO_INCREMENT,
+    url TEXT,
+    description_id INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (description_id) REFERENCES descriptions (id)
+  )`;
+
+  return new Promise((resolve, reject) => {
+    connectionTest.query(drop, (err, results) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(results);
+    })
+      .then(() => {
+        connectionTest.query(createDB, (err, results) => {
+          if (err) {
+            reject(err);
+          }
+          resolve(results);
+        });
+      })
+      .then(() => {
+        connectionTest.query(use, (err, results) => {
+          if (err) {
+            reject(err);
+          }
+          resolve(results);
+        });
+      })
+      .then(() => {
+        connectionTest.query(createDescriptions, (err, results) => {
+          if (err) {
+            reject(err);
+          }
+          resolve(results);
+        });
+      })
+      .then(() => {
+        connectionTest.query(createPictures, (err, results) => {
+          if (err) {
+            reject(err);
+          }
+          resolve(results);
+        });
+      })
+      .catch((err) => {
+        console.log('Error:', err);
+      });
   });
 });
 
