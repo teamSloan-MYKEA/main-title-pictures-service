@@ -17,6 +17,7 @@ const getPictures = (id) => new Promise((resolve, reject) => {
     }
     return resolve(results);
   });
+  connection.end();
 });
 
 module.exports.getPictures = getPictures;
