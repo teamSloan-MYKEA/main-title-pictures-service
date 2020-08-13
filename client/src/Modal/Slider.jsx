@@ -9,6 +9,7 @@ class Slider extends Component {
     super(images);
     this.state = {
       activeIndex: 0,
+      images,
     };
     this.goToPreviousSlide = this.goToPreviousSlide.bind(this);
     this.goToNextSlide = this.goToNextSlide.bind(this);
