@@ -12,6 +12,7 @@ class App extends Component {
       isCollapsed: true,
       productId: 1,
       show: false,
+      modalPicture: '',
     };
     this.getImages = this.getImages.bind(this);
     this.handleShowMoreClick = this.handleShowMoreClick.bind(this);
@@ -46,10 +47,15 @@ class App extends Component {
     }));
   }
 
-  showModal() {
-    this.setState(({ show }) => ({
+  showModal(e) {
+    console.log("image source:", e.target.src);
+    const picture = e.target.src;
+    // this.setState({ modalPicture: picture })
+    this.setState(({ show, modalPicture }) => ({
       show: !show,
+      modalPicture: modalPicture + picture,
     }));
+    console.log("state", this.state)
   }
 
   render() {

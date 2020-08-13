@@ -61,13 +61,8 @@ height: 1.5rem;
 width: 1.5rem;
 cursor: pointer;
 `;
-// Left and Right Arrow Icons
-const Arrow = styled.div`
-  position: absolute;
-  display: block;
-  top: 50%;
-`;
+
 export {
   Img, RangeRevampAspectRatioImage, RangeRevampMediaGridMediaContainer, Button,
-  SpanButtonCopy, ButtonLabel, CloseIcon, Arrow,
+  SpanButtonCopy, ButtonLabel, CloseIcon,
 };

@@ -6,7 +6,7 @@ function MediaContainer({ image, showModal }) {
   return (
     <RangeRevampMediaGridMediaContainer>
       <RangeRevampAspectRatioImage>
-        <Img className="range-revamp-image" src={image} alt="IKEA furniture" onClick={() => showModal()} />
+        <Img className="range-revamp-image" src={image} alt="IKEA furniture" onClick={(image) => showModal(image)} />
       </RangeRevampAspectRatioImage>
     </RangeRevampMediaGridMediaContainer>
   );

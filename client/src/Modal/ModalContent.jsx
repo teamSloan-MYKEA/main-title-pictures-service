@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ScrollIndicator from './ScrollIndicator';
 import Slider from './Slider';
 
 function ModalContent({ images }) {
