@@ -22,7 +22,6 @@ function Slide({ images, activeIndex }) {
 Slide.propTypes = {
   images: PropTypes.instanceOf(Array).isRequired,
   activeIndex: PropTypes.instanceOf(Number).isRequired,
-  openImage: PropTypes.instanceOf(String).isRequired,
 };
 
 export default Slide;

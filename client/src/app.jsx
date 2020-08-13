@@ -48,12 +48,19 @@ class App extends Component {
   }
 
   // Sets show boolean and sets clicked picture for modal open
+  // If no event was fired, sets Modal disappear.
   showModal(e) {
-    const picture = e.target.src;
-    this.setState(({ show, modalPicture }) => ({
-      show: !show,
-      modalPicture: modalPicture.replace(modalPicture, '') + picture,
-    }));
+    if (e) {
+      const picture = e.target.src;
+      this.setState(({ show, modalPicture }) => ({
+        show: !show,
+        modalPicture: modalPicture.replace(modalPicture, '') + picture,
+      }));
+    } else {
+      this.setState(({ show }) => ({
+        show: !show,
+      }));
+    }
   }
 
   render() {
@@ -71,7 +78,9 @@ class App extends Component {
           showModal={this.showModal}
           isCollapsed={isCollapsed}
         />
-        <Modal show={show} images={images} openImage={modalPicture} onClose={this.showModal} />
+        <div>
+          <Modal show={show} images={images} openImage={modalPicture} onClose={this.showModal} />
+        </div>
       </div>
     );
   }

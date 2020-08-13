@@ -7,12 +7,13 @@ import ScrollIndicator from './ScrollIndicator';
 import Slide from './Slide';
 
 class Slider extends Component {
-  constructor({ images, openImage }) {
+  constructor({ images, openImage, close }) {
     super(images, openImage);
     this.state = {
       activeIndex: 0,
       images,
       openImage,
+      close,
     };
     this.goToPreviousSlide = this.goToPreviousSlide.bind(this);
     this.goToNextSlide = this.goToNextSlide.bind(this);
@@ -45,7 +46,9 @@ class Slider extends Component {
   }
 
   render() {
-    const { images, activeIndex, openImage } = this.state;
+    const {
+      images, activeIndex, openImage, close,
+    } = this.state;
     return (
       <div>
         <KeyboardEventHandler
@@ -55,6 +58,8 @@ class Slider extends Component {
               this.goToPreviousSlide();
             } else if (key === 'right') {
               this.goToNextSlide();
+            } else if (key === 'esc') {
+              close();
             }
           }}
         />
@@ -71,6 +76,7 @@ class Slider extends Component {
 Slider.propTypes = {
   images: PropTypes.instanceOf(Array).isRequired,
   openImage: PropTypes.instanceOf(String).isRequired,
+  close: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default Slider;
