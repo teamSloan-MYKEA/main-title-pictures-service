@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Img } from '../Styles';
 
 class Slide extends Component {
   constructor({ images, activeIndex }) {
     super(images);
     this.state = {
       images,
+      activeIndex,
     };
   }
 
@@ -20,7 +22,7 @@ class Slide extends Component {
                 i === activeIndex ? 'active' : 'slide'
               }
             >
-              <img src={image.url} alt="IKEA furniture" />
+              <Img src={image.url} alt="IKEA furniture" />
             </div>
           ))
         }
