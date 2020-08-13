@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LeftArrow from './LeftArrow';
-import RightArrow from './RightArrow';
 import ScrollIndicator from './ScrollIndicator';
 import Slider from './Slider';
 
