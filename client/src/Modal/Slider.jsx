@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
+import Slide from './Slide';
 
 class Slider extends Component {
   constructor(props) {
@@ -27,9 +28,18 @@ class Slider extends Component {
   }
 
   render() {
+    const activeIndex = this.state;
     return (
-      <div>
-        <div onClick={this.goToNextSlide}></div>
+      <div className="slider">
+        <div>
+          <LeftArrow goToPreviousSlide={() => this.goToPreviousSlide()} />
+        </div>
+        <div>
+          <Slide activeIndex={activeIndex} />
+        </div>
+        <div>
+          <RightArrow goToNextSlide={() => this.goToNextSlide()} />
+        </div>
       </div>
     );
   }
