@@ -63,6 +63,7 @@ class App extends Component {
           }
           handleClick={this.handleShowMoreClick}
           showModal={this.showModal}
+          isCollapsed={isCollapsed}
         />
         <Modal show={show} images={images} onClose={this.showModal} />
       </div>

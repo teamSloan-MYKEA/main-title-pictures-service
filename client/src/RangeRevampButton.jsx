@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-function RangeRevampButton({ handleClick }) {
+function RangeRevampButton({ handleClick, isCollapsed }) {
   const Button = styled.button`
     display: block;
     margin: 1rem auto 0;
@@ -34,13 +34,14 @@ function RangeRevampButton({ handleClick }) {
   return (
     <Button type="button" onClick={handleClick}>
       <SpanButtonCopy>
-        <ButtonLabel>Show more images</ButtonLabel>
+        <ButtonLabel>{isCollapsed ? 'Show more images' : 'Show less images'}</ButtonLabel>
       </SpanButtonCopy>
     </Button>
   );
 }
 RangeRevampButton.propTypes = {
   handleClick: PropTypes.instanceOf(Function).isRequired,
+  isCollapsed: PropTypes.bool.isRequired,
 };
 
 export default RangeRevampButton;
