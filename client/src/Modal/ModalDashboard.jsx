@@ -4,7 +4,9 @@ import styled, { createGlobalStyle } from 'styled-components';
 import ModalTitle from './Title';
 import ModalContent from './ModalContent';
 
-function Modal({ show, images, onClose, openImage }) {
+function Modal({
+  show, images, onClose, openImage,
+}) {
   const ModalContainer = styled.div`
     position: fixed;
     top: 0;

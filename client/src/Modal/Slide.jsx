@@ -2,11 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Img } from '../Styles';
 
-function Slide({ images, activeIndex }) {
+function Slide({ images, activeIndex, openImage }) {
+  console.log("image from slide:", openImage);
   return (
+    // onOpen var when first clicked, then set to false.
     <section>
       {
         images.map((image, index) => (
+          /* If onOpen, take clicked image index and set className to active
+           and set onOpen to false, else:
+          */
           <div
             className={
               index === activeIndex ? 'active' : 'inactive'
@@ -22,6 +27,7 @@ function Slide({ images, activeIndex }) {
 Slide.propTypes = {
   images: PropTypes.instanceOf(Array).isRequired,
   activeIndex: PropTypes.instanceOf(Number).isRequired,
+  openImage: PropTypes.instanceOf(String).isRequired,
 };
 
 export default Slide;

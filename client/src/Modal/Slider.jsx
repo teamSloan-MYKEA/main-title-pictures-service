@@ -6,11 +6,12 @@ import ScrollIndicator from './ScrollIndicator';
 import Slide from './Slide';
 
 class Slider extends Component {
-  constructor({ images }) {
-    super(images);
+  constructor({ images, openImage }) {
+    super(images, openImage);
     this.state = {
       activeIndex: 0,
       images,
+      openImage,
     };
     this.goToPreviousSlide = this.goToPreviousSlide.bind(this);
     this.goToNextSlide = this.goToNextSlide.bind(this);
@@ -30,12 +31,12 @@ class Slider extends Component {
   }
 
   render() {
-    const { images, activeIndex } = this.state;
+    const { images, activeIndex, openImage } = this.state;
     return (
       <div>
         <div className="slider" style={{ display: 'flex', alignItems: 'center' }}>
           <FontAwesomeIcon icon={faArrowLeft} onClick={() => this.goToPreviousSlide()} />
-          <Slide activeIndex={activeIndex} images={images} />
+          <Slide activeIndex={activeIndex} images={images} openImage={openImage} />
           <FontAwesomeIcon icon={faArrowRight} onClick={() => this.goToNextSlide()} />
         </div>
         <ScrollIndicator />
@@ -45,6 +46,7 @@ class Slider extends Component {
 }
 Slider.propTypes = {
   images: PropTypes.instanceOf(Array).isRequired,
+  openImage: PropTypes.instanceOf(String).isRequired,
 };
 
 export default Slider;
