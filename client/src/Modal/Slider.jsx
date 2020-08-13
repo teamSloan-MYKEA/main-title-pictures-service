@@ -18,9 +18,9 @@ class Slider extends Component {
   goToNextSlide() {
     const { images } = this.state;
     let { activeIndex } = this.state;
-    activeIndex = activeIndex === (images.length - 1) ? 0 : activeIndex += 1;
-    console.log('active index after press: ', activeIndex)
+    activeIndex = activeIndex === (images.length - 1) ? (images.length - 1) : activeIndex += 1;
     this.setState({ activeIndex });
+    console.log('active index state after press: ', this.state.activeIndex)
   }
 
   goToPreviousSlide() {
@@ -31,7 +31,8 @@ class Slider extends Component {
   }
 
   render() {
-    const { activeIndex, images } = this.state;
+    const { images } = this.state;
+    let { activeIndex } = this.state;
     return (
       <div className="slider">
         <div>
