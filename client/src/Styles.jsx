@@ -26,7 +26,7 @@ const RangeRevampMediaGridMediaContainer = styled.div`
   width: calc(50% - 1.25rem);
   margin-bottom: 1.25rem;
 `;
-// Button
+// Show more images Button
 const Button = styled.button`
   display: block;
   margin: 1rem auto 0;
@@ -55,7 +55,19 @@ const ButtonLabel = styled.span`
   -webkit-box-orient: vertical;
   overflow: hidden;
 `;
+// Close Modal Icon
+const CloseIcon = styled.svg`
+height: 1.5rem;
+width: 1.5rem;
+cursor: pointer;
+`;
+// Left and Right Arrow Icons
+const Arrow = styled.div`
+  position: absolute;
+  display: block;
+  top: 50%;
+`;
 export {
   Img, RangeRevampAspectRatioImage, RangeRevampMediaGridMediaContainer, Button,
-  SpanButtonCopy, ButtonLabel,
+  SpanButtonCopy, ButtonLabel, CloseIcon, Arrow,
 };

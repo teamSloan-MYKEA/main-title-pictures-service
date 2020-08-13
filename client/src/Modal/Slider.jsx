@@ -4,6 +4,11 @@ import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 import ScrollIndicator from './ScrollIndicator';
 import Slide from './Slide';
+import { Arrow } from '../Styles';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 class Slider extends Component {
   constructor({ images }) {
@@ -32,19 +37,13 @@ class Slider extends Component {
   render() {
     const { images, activeIndex } = this.state;
     return (
-      <div className="slider">
-        <div>
-          <LeftArrow goToPreviousSlide={() => this.goToPreviousSlide()} />
-        </div>
-        <div>
+      <div>
+        <div className="slider" style={{ display: 'flex', alignItems: 'center' }}>
+          <FontAwesomeIcon icon={faArrowLeft} onClick={() => this.goToPreviousSlide()} />
           <Slide activeIndex={activeIndex} images={images} />
+          <FontAwesomeIcon icon={faArrowRight} onClick={() => this.goToNextSlide()} />
         </div>
-        <div>
-          <RightArrow goToNextSlide={() => this.goToNextSlide()} />
-        </div>
-        <div>
-          <ScrollIndicator />
-        </div>
+        <ScrollIndicator />
       </div>
     );
   }
