@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Slide extends Component {
-  constructor({ images }) {
+  constructor({ images, activeIndex }) {
     super(images);
     this.state = {
       images: images,
@@ -10,9 +10,20 @@ class Slide extends Component {
   }
 
   render() {
+    const { images, activeIndex } = this.state;
     return (
       <section>
-        Hello from Slide
+        {
+          images.map((image, i) => (
+            <div
+              className={
+                i === activeIndex ? 'active' : 'slide'}
+              key={i}
+            >
+              <img src={image.url} alt="IKEA furniture" />
+            </div>
+          ))
+        }
       </section>
     );
   }
