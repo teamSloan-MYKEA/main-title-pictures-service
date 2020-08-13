@@ -50,10 +50,9 @@ class App extends Component {
   showModal(e) {
     console.log('image source:', e.target.src);
     const picture = e.target.src;
-    // this.setState({ modalPicture: picture })
     this.setState(({ show, modalPicture }) => ({
       show: !show,
-      modalPicture: modalPicture + picture,
+      modalPicture: modalPicture.replace(modalPicture, '') + picture,
     }));
     console.log('state', this.state);
   }

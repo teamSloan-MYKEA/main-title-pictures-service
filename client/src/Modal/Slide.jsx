@@ -4,6 +4,14 @@ import { Img } from '../Styles';
 
 function Slide({ images, activeIndex, openImage }) {
   console.log("image from slide:", openImage);
+  let openImageIndex = 0;
+  images.forEach((image, index) => {
+    if (image.url === openImage) {
+      openImageIndex = index;
+    }
+    return 0;
+  });
+  console.log("image index:", openImageIndex);
   return (
     // onOpen var when first clicked, then set to false.
     <section>
