@@ -27,9 +27,7 @@ class Slider extends Component {
       return 0;
     });
     console.log("image index:", openImageIndex);
-    // this.setState({
-
-    // });
+    this.setState({ activeIndex: openImageIndex });
   }
 
   goToNextSlide() {
