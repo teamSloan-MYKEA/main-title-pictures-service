@@ -6,7 +6,7 @@ import Slide from './Slide';
 
 class Slider extends Component {
   constructor({ images }) {
-    super(props);
+    super(images);
     this.state = {
       activeIndex: 0,
       length: landingData.length,
