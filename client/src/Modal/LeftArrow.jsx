@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-function LeftArrow() {
+function LeftArrow({ goToPreviousSlide }) {
   const element = <FontAwesomeIcon icon={faArrowLeft} />;
   return (
     <div>

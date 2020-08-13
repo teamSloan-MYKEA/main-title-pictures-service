@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Slide extends Component {
-  constructor(props) {
-    super(props);
+  constructor({ images }) {
+    super(images);
     this.state = {
-      landing: landingData
+      images: images,
     };
   }
 
@@ -18,6 +18,7 @@ class Slide extends Component {
   }
 }
 Slide.propTypes = {
+  images: PropTypes.instanceOf(Array).isRequired,
 };
 
 export default Slide;

@@ -9,19 +9,20 @@ class Slider extends Component {
     super(images);
     this.state = {
       activeIndex: 0,
-      length: landingData.length,
     };
     this.goToPreviousSlide = this.goToPreviousSlide.bind(this);
     this.goToNextSlide = this.goToNextSlide.bind(this);
   }
 
   goToNextSlide() {
+    console.log('Hello from go to next slide')
     let { activeIndex } = this.state;
     activeIndex = activeIndex < 1 ? 0 : activeIndex += 1;
     this.setState({ activeIndex });
   }
 
   goToPreviousSlide() {
+    console.log('Hello from go to prev slide')
     let { activeIndex } = this.state;
     activeIndex = activeIndex < 1 ? 0 : activeIndex -= 1;
     this.setState({ activeIndex });
@@ -45,8 +46,6 @@ class Slider extends Component {
   }
 }
 Slider.propTypes = {
-  goToNextSlide: PropTypes.instanceOf(Function).isRequired,
-  goToPreviousSlide: PropTypes.instanceOf(Function).isRequired,
   images: PropTypes.instanceOf(Array).isRequired,
 };
 

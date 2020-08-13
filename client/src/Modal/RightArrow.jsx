@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-function RightArrow() {
+function RightArrow({ goToNextSlide }) {
   const element = <FontAwesomeIcon icon={faArrowRight} />;
   return (
     <div>
-      <div onClick={gotToNextSlide}>{element}</div>
+      <div onClick={goToNextSlide}>{element}</div>
     </div>
   );
 }
