@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
-import Slider from './Slider';
 import ScrollIndicator from './ScrollIndicator';
+import Slider from './Slider';
 
 function ModalContent({ images }) {
   return (
@@ -11,7 +11,7 @@ function ModalContent({ images }) {
       {/* <LeftArrow /> */}
       <Slider images={images} />
       {/* <RightArrow /> */}
-      <ScrollIndicator />
+      {/* <ScrollIndicator /> */}
     </div>
   );
 }
