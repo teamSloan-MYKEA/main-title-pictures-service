@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
-import PropTypes from 'prop-types';
 
 class Slider extends Component {
   constructor(props) {
@@ -10,18 +10,26 @@ class Slider extends Component {
       activeIndex: 0,
       length: landingData.length,
     };
+    this.goToPreviousSlide = this.goToPreviousSlide.bind(this);
+    this.goToNextSlide = this.goToNextSlide.bind(this);
   }
 
   goToNextSlide() {
-
+    let { activeIndex } = this.state;
+    activeIndex = activeIndex < 1 ? 0 : activeIndex += 1;
+    this.setState({ activeIndex });
   }
 
-  gotToNextSlide
+  goToPreviousSlide() {
+    let { activeIndex } = this.state;
+    activeIndex = activeIndex < 1 ? 0 : activeIndex -= 1;
+    this.setState({ activeIndex });
+  }
 
   render() {
     return (
       <div>
-        <div onClick={gotToNextSlide}>{element}</div>
+        <div onClick={this.goToNextSlide}></div>
       </div>
     );
   }
