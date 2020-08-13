@@ -5,7 +5,7 @@ import RightArrow from './RightArrow';
 import Slide from './Slide';
 
 class Slider extends Component {
-  constructor(props) {
+  constructor({ images }) {
     super(props);
     this.state = {
       activeIndex: 0,
@@ -28,14 +28,14 @@ class Slider extends Component {
   }
 
   render() {
-    const activeIndex = this.state;
+    const { activeIndex, images } = this.state;
     return (
       <div className="slider">
         <div>
           <LeftArrow goToPreviousSlide={() => this.goToPreviousSlide()} />
         </div>
         <div>
-          <Slide activeIndex={activeIndex} />
+          <Slide activeIndex={activeIndex} images={images} />
         </div>
         <div>
           <RightArrow goToNextSlide={() => this.goToNextSlide()} />
@@ -47,6 +47,7 @@ class Slider extends Component {
 Slider.propTypes = {
   goToNextSlide: PropTypes.instanceOf(Function).isRequired,
   goToPreviousSlide: PropTypes.instanceOf(Function).isRequired,
+  images: PropTypes.instanceOf(Array).isRequired,
 };
 
 export default Slider;
