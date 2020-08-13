@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import RangeRevampMediaGrid from './RangeRevampMediaGrid';
 import RangeRevampButton from './RangeRevampButton';
 
-function RangeMediaGrid({ images, handleClick, showModal, isCollapsed }) {
+function RangeMediaGrid({
+  images, handleClick, showModal, isCollapsed,
+}) {
   const Grid = styled.div`
     position: relative;
     margin-bottom: 3.75rem;
