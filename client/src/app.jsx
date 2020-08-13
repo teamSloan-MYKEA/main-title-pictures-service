@@ -48,18 +48,20 @@ class App extends Component {
   }
 
   showModal(e) {
-    console.log("image source:", e.target.src);
+    console.log('image source:', e.target.src);
     const picture = e.target.src;
     // this.setState({ modalPicture: picture })
     this.setState(({ show, modalPicture }) => ({
       show: !show,
       modalPicture: modalPicture + picture,
     }));
-    console.log("state", this.state)
+    console.log('state', this.state);
   }
 
   render() {
-    const { images, isCollapsed, show } = this.state;
+    const {
+      images, isCollapsed, show, modalPicture,
+    } = this.state;
     return (
       <div>
         <Reset />
@@ -71,7 +73,7 @@ class App extends Component {
           showModal={this.showModal}
           isCollapsed={isCollapsed}
         />
-        <Modal show={show} images={images} onClose={this.showModal} />
+        <Modal show={show} images={images} openImage={modalPicture} onClose={this.showModal} />
       </div>
     );
   }

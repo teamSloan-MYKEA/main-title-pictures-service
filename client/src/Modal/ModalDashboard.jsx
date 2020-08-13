@@ -4,7 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import ModalTitle from './Title';
 import ModalContent from './ModalContent';
 
-function Modal({ show, images, onClose }) {
+function Modal({ show, images, onClose, openImage }) {
   const ModalContainer = styled.div`
     position: fixed;
     top: 0;
@@ -51,7 +51,7 @@ function Modal({ show, images, onClose }) {
         <ModalTitleContainer>
           <ModalTitle close={onClose} />
         </ModalTitleContainer>
-        <ModalContent images={images} />
+        <ModalContent images={images} openImage={openImage} />
       </ModalMain>
     </ModalContainer>
   );
@@ -60,6 +60,7 @@ Modal.propTypes = {
   show: PropTypes.bool.isRequired,
   images: PropTypes.instanceOf(Array).isRequired,
   onClose: PropTypes.instanceOf(Function).isRequired,
+  openImage: PropTypes.instanceOf(String).isRequired,
 };
 
 export default Modal;
