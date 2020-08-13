@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Img } from '../Styles';
 
-function Slide({ images, activeIndex, openImage }) {
+function Slide({ images, activeIndex }) {
   return (
     <section>
       {

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { createGlobalStyle } from 'styled-components';
 import ModalTitle from './Title';
-import ModalContent from './ModalContent';
+import Slider from './Slider';
 
 function Modal({
   show, images, onClose, openImage,
@@ -53,7 +53,7 @@ function Modal({
         <ModalTitleContainer>
           <ModalTitle close={onClose} />
         </ModalTitleContainer>
-        <ModalContent images={images} openImage={openImage} />
+        <Slider images={images} openImage={openImage} close={onClose} />
       </ModalMain>
     </ModalContainer>
   );
