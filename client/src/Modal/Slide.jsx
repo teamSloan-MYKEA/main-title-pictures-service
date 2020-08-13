@@ -19,7 +19,7 @@ class Slide extends Component {
           images.map((image, i) => (
             <div
               className={
-                i === activeIndex ? 'active' : 'slide'
+                i === activeIndex ? 'active' : 'inactive'
               }
             >
               <Img src={image.url} alt="IKEA furniture" />
@@ -32,6 +32,7 @@ class Slide extends Component {
 }
 Slide.propTypes = {
   images: PropTypes.instanceOf(Array).isRequired,
+  activeIndex: PropTypes.instanceOf(Number).isRequired,
 };
 
 export default Slide;

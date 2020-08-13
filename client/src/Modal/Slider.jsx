@@ -17,12 +17,14 @@ class Slider extends Component {
 
   goToNextSlide() {
     let { activeIndex } = this.state;
+    console.log('active index: ', activeIndex)
     activeIndex = activeIndex < 1 ? 0 : activeIndex += 1;
     this.setState({ activeIndex });
   }
 
   goToPreviousSlide() {
     let { activeIndex } = this.state;
+    console.log('active index: ', activeIndex)
     activeIndex = activeIndex < 1 ? 0 : activeIndex -= 1;
     this.setState({ activeIndex });
   }

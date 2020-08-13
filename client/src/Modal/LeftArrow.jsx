@@ -6,8 +6,8 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 function LeftArrow({ goToPreviousSlide }) {
   const element = <FontAwesomeIcon icon={faArrowLeft} />;
   return (
-    <div>
-      <div onClick={goToPreviousSlide}>{element}</div>
+    <div onClick={goToPreviousSlide}>
+      <div>{element}</div>
     </div>
   );
 }

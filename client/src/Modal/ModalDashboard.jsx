@@ -27,6 +27,14 @@ function Modal({ show, images, onClose }) {
     body {
       overflow: hidden;
     }
+
+    .inactive {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
   `;
   const ModalTitleContainer = styled.div`
     display: flex;
