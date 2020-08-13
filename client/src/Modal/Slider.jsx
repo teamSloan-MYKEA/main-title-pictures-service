@@ -16,16 +16,17 @@ class Slider extends Component {
   }
 
   goToNextSlide() {
+    const { images } = this.state;
     let { activeIndex } = this.state;
-    console.log('active index: ', activeIndex)
-    activeIndex = activeIndex < 1 ? 0 : activeIndex += 1;
+    activeIndex = activeIndex === (images.length - 1) ? 0 : activeIndex += 1;
+    console.log('active index after press: ', activeIndex)
     this.setState({ activeIndex });
   }
 
   goToPreviousSlide() {
     let { activeIndex } = this.state;
-    console.log('active index: ', activeIndex)
     activeIndex = activeIndex < 1 ? 0 : activeIndex -= 1;
+    console.log('active index: ', activeIndex)
     this.setState({ activeIndex });
   }
 
