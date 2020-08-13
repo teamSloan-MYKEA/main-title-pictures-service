@@ -17,6 +17,7 @@ class Slider extends Component {
     this.goToNextSlide = this.goToNextSlide.bind(this);
   }
 
+  // First modal image matches user click
   componentDidMount() {
     const { images, openImage } = this.state;
     let openImageIndex = 0;
@@ -26,7 +27,6 @@ class Slider extends Component {
       }
       return 0;
     });
-    console.log("image index:", openImageIndex);
     this.setState({ activeIndex: openImageIndex });
   }
 

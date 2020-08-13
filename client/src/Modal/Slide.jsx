@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { Img } from '../Styles';
 
 function Slide({ images, activeIndex, openImage }) {
-  console.log("image from slide:", openImage);
-
   return (
     <section>
       {
