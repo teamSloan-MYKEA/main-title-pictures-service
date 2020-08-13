@@ -47,14 +47,13 @@ class App extends Component {
     }));
   }
 
+  // Sets show boolean and sets clicked picture for modal open
   showModal(e) {
-    console.log('image source:', e.target.src);
     const picture = e.target.src;
     this.setState(({ show, modalPicture }) => ({
       show: !show,
       modalPicture: modalPicture.replace(modalPicture, '') + picture,
     }));
-    console.log('state', this.state);
   }
 
   render() {

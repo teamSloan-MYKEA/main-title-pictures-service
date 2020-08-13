@@ -17,6 +17,21 @@ class Slider extends Component {
     this.goToNextSlide = this.goToNextSlide.bind(this);
   }
 
+  componentDidMount() {
+    const { images, openImage } = this.state;
+    let openImageIndex = 0;
+    images.forEach((image, index) => {
+      if (image.url === openImage) {
+        openImageIndex = index;
+      }
+      return 0;
+    });
+    console.log("image index:", openImageIndex);
+    // this.setState({
+
+    // });
+  }
+
   goToNextSlide() {
     const { images } = this.state;
     let { activeIndex } = this.state;
