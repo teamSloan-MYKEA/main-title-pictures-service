@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import KeyboardEventHandler from 'react-keyboard-event-handler';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ScrollIndicator from './ScrollIndicator';
@@ -47,6 +48,16 @@ class Slider extends Component {
     const { images, activeIndex, openImage } = this.state;
     return (
       <div>
+        <KeyboardEventHandler
+          handleKeys={['left', 'right', 'esc']}
+          onKeyEvent={(key) => {
+            if (key === 'left') {
+              this.goToPreviousSlide();
+            } else if (key === 'right') {
+              this.goToNextSlide();
+            }
+          }}
+        />
         <div className="slider" style={{ display: 'flex', alignItems: 'center' }}>
           <FontAwesomeIcon icon={faArrowLeft} onClick={() => this.goToPreviousSlide()} />
           <Slide activeIndex={activeIndex} images={images} openImage={openImage} />
