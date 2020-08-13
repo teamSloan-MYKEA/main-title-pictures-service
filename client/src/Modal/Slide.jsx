@@ -1,21 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Img } from '../Styles';
 
 function Slide({ images, activeIndex }) {
-  // constructor({ images, activeIndex }) {
-  //   super(images, activeIndex);
-  //   this.state = {
-  //     images,
-  //     activeIndex,
-  //   };
-  // }
-
-  console.log('from Slide. activeIndex is:', activeIndex);
   return (
-    // const { images } = this.state;
-    // let { activeIndex } = this.state;
-    // return (
     <section>
       {
         images.map((image, i) => (
@@ -29,8 +17,7 @@ function Slide({ images, activeIndex }) {
         ))
       }
     </section>
-    // );
-  )
+  );
 }
 Slide.propTypes = {
   images: PropTypes.instanceOf(Array).isRequired,
