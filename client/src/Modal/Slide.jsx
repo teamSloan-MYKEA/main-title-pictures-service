@@ -5,21 +5,20 @@ class Slide extends Component {
   constructor({ images, activeIndex }) {
     super(images);
     this.state = {
-      slides: images,
+      images,
     };
   }
 
   render() {
-    const { slides, activeIndex } = this.state;
+    const { images, activeIndex } = this.state;
     return (
       <section>
         {
-          slides.map((image, i) => (
+          images.map((image, i) => (
             <div
               className={
                 i === activeIndex ? 'active' : 'slide'
               }
-              key={i}
             >
               <img src={image.url} alt="IKEA furniture" />
             </div>
