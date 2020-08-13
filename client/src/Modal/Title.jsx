@@ -12,8 +12,8 @@ function ModalTitle({ close }) {
   `;
   const element = <FontAwesomeIcon icon={faTimes} />;
   return (
-    <CloseIcon>
-      <svg onClick={close}>{element}</svg>
+    <CloseIcon onClick={close}>
+      <svg>{element}</svg>
     </CloseIcon>
   );
 }

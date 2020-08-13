@@ -6,10 +6,10 @@ function Slide({ images, activeIndex }) {
   return (
     <section>
       {
-        images.map((image, i) => (
+        images.map((image, index) => (
           <div
             className={
-              i === activeIndex ? 'active' : 'inactive'
+              index === activeIndex ? 'active' : 'inactive'
             }
           >
             <Img src={image.url} alt="IKEA furniture" />
