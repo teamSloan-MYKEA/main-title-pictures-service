@@ -63,7 +63,7 @@ class Slider extends Component {
             }
           }}
         />
-        <div className="slider" style={{ display: 'flex', alignItems: 'center' }}>
+        <div className="slider" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <FontAwesomeIcon icon={faArrowLeft} onClick={() => this.goToPreviousSlide()} />
           <Slide activeIndex={activeIndex} images={images} openImage={openImage} />
           <FontAwesomeIcon icon={faArrowRight} onClick={() => this.goToNextSlide()} />

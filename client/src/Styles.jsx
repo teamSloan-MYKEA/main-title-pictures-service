@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-// Main Images
+// Main Item Grid Images
 const Img = styled.img`
   object-fit: cover;
   width: 100%;
