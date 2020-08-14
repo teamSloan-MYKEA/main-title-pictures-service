@@ -75,6 +75,40 @@ const CarouselContent = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
+// Carousel Scroll Bar
+const ScrollIndicatorBar = styled.span`
+  will-change: transform;
+  background: #111;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  display: block;
+`;
+const ScrollIndicatorBarWrapper = styled.span`
+  width: 100%;
+  background: #dfdfdf;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  height: .125rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: block;
+`;
+const ScrollIndicatorButton = styled.button`
+  height: 1.375rem;
+  position: relative;
+  width: 100%;
+  outline: none;
+  border: 0;
+  padding: 0;
+  /* background: transparent; */
+  display: block;
+`;
 // Inner Image Zoom
 const InnerImageGlobalStyle = createGlobalStyle`
 .iiz {
@@ -196,5 +230,7 @@ const InnerImageGlobalStyle = createGlobalStyle`
 
 export {
   Img, RangeRevampAspectRatioImage, RangeRevampMediaGridMediaContainer, Button,
-  SpanButtonCopy, ButtonLabel, CloseIcon, CarouselImage, CarouselContent, InnerImageGlobalStyle,
+  SpanButtonCopy, ButtonLabel, CloseIcon, CarouselImage,
+  ScrollIndicatorBar, ScrollIndicatorBarWrapper, ScrollIndicatorButton,
+  CarouselContent, InnerImageGlobalStyle,
 };
