@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CarouselImage, InnerImageGlobalStyle } from '../Styles';
+import InnerImageZoom from 'react-inner-image-zoom';
+import { InnerImageGlobalStyle } from '../Styles';
 
 function Slide({ images, activeIndex }) {
   return (
@@ -12,7 +13,8 @@ function Slide({ images, activeIndex }) {
               index === activeIndex ? 'active' : 'inactive'
             }
           >
-            <CarouselImage src={image.url} alt="IKEA furniture" />
+            <InnerImageGlobalStyle />
+            <InnerImageZoom src={image.url} alt="IKEA furniture" />
           </div>
         ))
       }

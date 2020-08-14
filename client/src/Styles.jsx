@@ -61,7 +61,7 @@ height: 1.5rem;
 width: 1.5rem;
 cursor: pointer;
 `;
-// Carousel Images
+// Carousel Images: Moved to InnerImageGlobalStyle:
 const CarouselImage = styled.img`
   max-height: 75vh;
   max-width: 100%;
@@ -91,6 +91,7 @@ const InnerImageGlobalStyle = createGlobalStyle`
 
 .iiz__img {
   max-width: 100%;
+  max-height: 75vh;
   height: auto;
   display: block;
   pointer-events: none;
