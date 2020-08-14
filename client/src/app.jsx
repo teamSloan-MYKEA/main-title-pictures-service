@@ -12,6 +12,7 @@ class App extends Component {
       isCollapsed: true,
       productId: 1,
       show: false,
+      modalPicture: '',
     };
     this.getImages = this.getImages.bind(this);
     this.handleShowMoreClick = this.handleShowMoreClick.bind(this);
@@ -46,14 +47,26 @@ class App extends Component {
     }));
   }
 
-  showModal() {
-    this.setState(({ show }) => ({
-      show: !show,
-    }));
+  // Sets show boolean and sets clicked picture for modal open
+  // If no event was fired, sets Modal disappear.
+  showModal(e) {
+    if (e) {
+      const picture = e.target.src;
+      this.setState(({ show, modalPicture }) => ({
+        show: !show,
+        modalPicture: modalPicture.replace(modalPicture, '') + picture,
+      }));
+    } else {
+      this.setState(({ show }) => ({
+        show: !show,
+      }));
+    }
   }
 
   render() {
-    const { images, isCollapsed, show } = this.state;
+    const {
+      images, isCollapsed, show, modalPicture,
+    } = this.state;
     return (
       <div>
         <Reset />
@@ -63,8 +76,11 @@ class App extends Component {
           }
           handleClick={this.handleShowMoreClick}
           showModal={this.showModal}
+          isCollapsed={isCollapsed}
         />
-        <Modal show={show} images={images} onClose={this.showModal} />
+        <div>
+          <Modal show={show} images={images} openImage={modalPicture} onClose={this.showModal} />
+        </div>
       </div>
     );
   }

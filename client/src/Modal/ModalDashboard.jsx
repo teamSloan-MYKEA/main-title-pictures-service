@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { createGlobalStyle } from 'styled-components';
 import ModalTitle from './Title';
-import ModalContent from './ModalContent';
+import Slider from './Slider';
 
-function Modal({ show, images, onClose }) {
+function Modal({
+  show, images, onClose, openImage,
+}) {
   const ModalContainer = styled.div`
     position: fixed;
     top: 0;
@@ -27,6 +29,14 @@ function Modal({ show, images, onClose }) {
     body {
       overflow: hidden;
     }
+
+    .inactive {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
   `;
   const ModalTitleContainer = styled.div`
     display: flex;
@@ -43,7 +53,7 @@ function Modal({ show, images, onClose }) {
         <ModalTitleContainer>
           <ModalTitle close={onClose} />
         </ModalTitleContainer>
-        <ModalContent images={images} />
+        <Slider images={images} openImage={openImage} close={onClose} />
       </ModalMain>
     </ModalContainer>
   );
@@ -52,6 +62,7 @@ Modal.propTypes = {
   show: PropTypes.bool.isRequired,
   images: PropTypes.instanceOf(Array).isRequired,
   onClose: PropTypes.instanceOf(Function).isRequired,
+  openImage: PropTypes.instanceOf(String).isRequired,
 };
 
 export default Modal;
