@@ -5,6 +5,7 @@ import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ScrollIndicator from './ScrollIndicator';
 import Slide from './Slide';
+import { CarouselContent } from '../Styles';
 
 class Slider extends Component {
   constructor({ images, openImage, close }) {
@@ -63,11 +64,11 @@ class Slider extends Component {
             }
           }}
         />
-        <div className="slider" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <CarouselContent>
           <FontAwesomeIcon icon={faArrowLeft} onClick={() => this.goToPreviousSlide()} />
           <Slide activeIndex={activeIndex} images={images} openImage={openImage} />
           <FontAwesomeIcon icon={faArrowRight} onClick={() => this.goToNextSlide()} />
-        </div>
+        </CarouselContent>
         <ScrollIndicator />
       </div>
     );

@@ -69,8 +69,14 @@ const CarouselImage = styled.img`
   height: auto;
   cursor: zoom-in;
 `;
+// Carousel Content
+const CarouselContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 
 export {
   Img, RangeRevampAspectRatioImage, RangeRevampMediaGridMediaContainer, Button,
-  SpanButtonCopy, ButtonLabel, CloseIcon, CarouselImage,
+  SpanButtonCopy, ButtonLabel, CloseIcon, CarouselImage, CarouselContent,
 };
