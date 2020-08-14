@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CarouselImage } from '../Styles';
+import { CarouselImage, InnerImageGlobalStyle } from '../Styles';
 
 function Slide({ images, activeIndex }) {
   return (
