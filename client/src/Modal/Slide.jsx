@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Img } from '../Styles';
+import { CarouselImage } from '../Styles';
 
 function Slide({ images, activeIndex }) {
   return (
@@ -12,7 +12,7 @@ function Slide({ images, activeIndex }) {
               index === activeIndex ? 'active' : 'inactive'
             }
           >
-            <Img src={image.url} alt="IKEA furniture" />
+            <CarouselImage src={image.url} alt="IKEA furniture" />
           </div>
         ))
       }

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-// Image
+// Main Images
 const Img = styled.img`
   object-fit: cover;
   width: 100%;
@@ -61,8 +61,16 @@ height: 1.5rem;
 width: 1.5rem;
 cursor: pointer;
 `;
+// Carousel Images
+const CarouselImage = styled.img`
+  max-height: 75vh;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  cursor: zoom-in;
+`;
 
 export {
   Img, RangeRevampAspectRatioImage, RangeRevampMediaGridMediaContainer, Button,
-  SpanButtonCopy, ButtonLabel, CloseIcon,
+  SpanButtonCopy, ButtonLabel, CloseIcon, CarouselImage,
 };

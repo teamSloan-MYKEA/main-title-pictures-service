@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
       images: [],
       isCollapsed: true,
-      productId: 1,
+      productId: 2,
       show: false,
       modalPicture: '',
     };
