@@ -9,7 +9,7 @@ import { CarouselContent } from '../Styles';
 
 class Slider extends Component {
   constructor({ images, openImage, close }) {
-    super(images, openImage);
+    super();
     this.state = {
       activeIndex: 0,
       images,
