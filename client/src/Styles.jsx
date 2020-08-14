@@ -69,6 +69,15 @@ const CarouselImage = styled.img`
   height: auto;
   cursor: zoom-in;
 `;
+// Carousel Arrows
+const CarouselArrow = createGlobalStyle`
+  .fade {
+    opacity: 0.5;
+  }
+  .fade:hover {
+    opacity:1;
+  }
+`;
 // Carousel Content
 const CarouselContent = styled.div`
   display: flex;
@@ -77,6 +86,7 @@ const CarouselContent = styled.div`
 `;
 // Carousel Scroll Bar
 const ScrollIndicatorBar = styled.span`
+  transform: scaleX:(0.11) translateX(600%);
   will-change: transform;
   background: #111;
   position: absolute;
@@ -87,7 +97,6 @@ const ScrollIndicatorBar = styled.span`
   -ms-transform-origin: 0 0;
   transform-origin: 0 0;
   display: block;
-  // transform: scaleX:(0.11) translateX(600%);
 `;
 const ScrollIndicatorBarWrapper = styled.span`
   width: 100%;
@@ -231,7 +240,7 @@ const InnerImageGlobalStyle = createGlobalStyle`
 
 export {
   Img, RangeRevampAspectRatioImage, RangeRevampMediaGridMediaContainer, Button,
-  SpanButtonCopy, ButtonLabel, CloseIcon, CarouselImage,
+  SpanButtonCopy, ButtonLabel, CloseIcon, CarouselImage, CarouselArrow,
   ScrollIndicatorBar, ScrollIndicatorBarWrapper, ScrollIndicatorButton,
   CarouselContent, InnerImageGlobalStyle,
 };
