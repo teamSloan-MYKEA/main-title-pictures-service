@@ -64,11 +64,14 @@ class Slider extends Component {
             }
           }}
         />
-        <CarouselContent>
-          <CarouselArrow />
-          <FontAwesomeIcon icon={faArrowLeft} onClick={() => this.goToPreviousSlide()} className="fade" style={{ transition: 'all 0.3s ease' }} />
+        <CarouselContent className="carousel-content">
+          <CarouselArrow>
+            <FontAwesomeIcon icon={faArrowLeft} onClick={() => this.goToPreviousSlide()} />
+          </CarouselArrow>
           <Slide activeIndex={activeIndex} images={images} openImage={openImage} />
-          <FontAwesomeIcon icon={faArrowRight} onClick={() => this.goToNextSlide()} className="fade" style={{ transition: 'all 0.3s ease' }} />
+          <CarouselArrow>
+            <FontAwesomeIcon icon={faArrowRight} onClick={() => this.goToNextSlide()} />
+          </CarouselArrow>
         </CarouselContent>
         <ScrollIndicator activeIndex={activeIndex} />
       </div>

@@ -69,20 +69,19 @@ const CarouselImage = styled.img`
   height: auto;
   cursor: zoom-in;
 `;
-// Carousel Arrows
-const CarouselArrow = createGlobalStyle`
-  .fade {
-    opacity: 0.5;
-  }
-  .fade:hover {
-    opacity:1;
-  }
-`;
 // Carousel Content
 const CarouselContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
+// Carousel Arrows
+const CarouselArrow = styled.div`
+  opacity: 0;
+  transition: all 0.3s ease;
+  ${CarouselContent}:hover & {
+    opacity: 1;
+  }
 `;
 // Carousel Scroll Bar
 const ScrollIndicatorBar = styled.span`
