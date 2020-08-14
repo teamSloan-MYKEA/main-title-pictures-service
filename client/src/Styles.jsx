@@ -87,6 +87,7 @@ const ScrollIndicatorBar = styled.span`
   -ms-transform-origin: 0 0;
   transform-origin: 0 0;
   display: block;
+  // transform: scaleX:(0.11) translateX(600%);
 `;
 const ScrollIndicatorBarWrapper = styled.span`
   width: 100%;
@@ -106,7 +107,7 @@ const ScrollIndicatorButton = styled.button`
   outline: none;
   border: 0;
   padding: 0;
-  /* background: transparent; */
+  background: transparent;
   display: block;
 `;
 // Inner Image Zoom

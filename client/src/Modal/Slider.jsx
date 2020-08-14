@@ -69,7 +69,7 @@ class Slider extends Component {
           <Slide activeIndex={activeIndex} images={images} openImage={openImage} />
           <FontAwesomeIcon icon={faArrowRight} onClick={() => this.goToNextSlide()} />
         </CarouselContent>
-        <ScrollIndicator />
+        <ScrollIndicator activeIndex={activeIndex} />
       </div>
     );
   }
