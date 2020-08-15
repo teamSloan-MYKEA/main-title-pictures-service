@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import InnerImageZoom from 'react-inner-image-zoom';
-import { ImageSlideRight, ImageSlideLeft, InnerImageGlobalStyle } from '../Styles';
+import { ImageSlideRight, ImageSlideLeft, ImageSlideUp, InnerImageGlobalStyle } from '../Styles';
 
 function Slide({ images, activeIndex, slideDirection }) {
   return (
@@ -19,7 +19,6 @@ function Slide({ images, activeIndex, slideDirection }) {
                   <ImageSlideRight>
                     <InnerImageGlobalStyle />
                     <InnerImageZoom src={image.url} alt="IKEA furniture" />
-
                   </ImageSlideRight>
                 );
                 case 'right': return (
@@ -27,6 +26,12 @@ function Slide({ images, activeIndex, slideDirection }) {
                     <InnerImageGlobalStyle />
                     <InnerImageZoom src={image.url} alt="IKEA furniture" />
                   </ImageSlideLeft>
+                );
+                case 'up': return (
+                  <ImageSlideUp>
+                    <InnerImageGlobalStyle />
+                    <InnerImageZoom src={image.url} alt="IKEA furniture" />
+                  </ImageSlideUp>
                 );
                 default: return (
                   <div>

@@ -24,6 +24,7 @@ class Slider extends Component {
   // First modal image matches user click
   componentDidMount() {
     const { images, openImage } = this.state;
+    let { slideDirection } = this.state;
     let openImageIndex = 0;
     images.forEach((image, index) => {
       if (image.url === openImage) {
@@ -31,7 +32,8 @@ class Slider extends Component {
       }
       return 0;
     });
-    this.setState({ activeIndex: openImageIndex });
+    slideDirection = 'up';
+    this.setState({ activeIndex: openImageIndex, slideDirection });
   }
 
   goToNextSlide() {

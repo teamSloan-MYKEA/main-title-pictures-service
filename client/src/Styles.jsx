@@ -136,11 +136,23 @@ const SlideToLeft = keyframes`
     transform: translateX(0);
   }
 `;
+const SlideToTop = keyframes`
+  from {
+    transform: translateY(900px);
+  }
+  to {
+    transform: translateX(0);
+  }
+`;
+const animationSpeed = '0.3s linear';
 const ImageSlideRight = styled.div`
-  animation: ${SlideToRight} 0.3s linear;
+  animation: ${SlideToRight} ${animationSpeed};
 `;
 const ImageSlideLeft = styled.div`
-  animation: ${SlideToLeft} 0.3s linear;
+  animation: ${SlideToLeft} ${animationSpeed};
+`;
+const ImageSlideUp = styled.div`
+  animation: ${SlideToTop} ${animationSpeed}
 `;
 // Inner Image Zoom
 const InnerImageGlobalStyle = createGlobalStyle`
@@ -265,5 +277,5 @@ export {
   Img, RangeRevampAspectRatioImage, RangeRevampMediaGridMediaContainer, Button,
   SpanButtonCopy, ButtonLabel, CloseIcon, CarouselImage, CarouselArrow,
   ScrollIndicatorBar, ScrollIndicatorBarWrapper, ScrollIndicatorButton,
-  CarouselContent, ImageSlideRight, ImageSlideLeft, InnerImageGlobalStyle,
+  CarouselContent, ImageSlideRight, ImageSlideLeft, ImageSlideUp, InnerImageGlobalStyle,
 };
