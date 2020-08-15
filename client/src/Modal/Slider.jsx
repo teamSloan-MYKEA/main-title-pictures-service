@@ -54,14 +54,14 @@ class Slider extends Component {
 
   goToSlide(targetIndex) {
     let { activeIndex, slideDirection } = this.state;
+    slideDirection = activeIndex > targetIndex ? 'left' : 'right';
     activeIndex = targetIndex;
-    console.log('Go to slide called with:', activeIndex);
-    this.setState({ activeIndex });
+    this.setState({ activeIndex, slideDirection });
   }
 
   render() {
     const {
-      images, activeIndex, openImage, close, slideDirection, goToSlide,
+      images, activeIndex, openImage, close, slideDirection,
     } = this.state;
     return (
       <div>
