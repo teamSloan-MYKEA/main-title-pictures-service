@@ -5,7 +5,7 @@ import { ScrollIndicatorBarWrapper, ScrollIndicatorButton } from '../Styles';
 
 function ScrollIndicator({ activeIndex, slideDirection, images }) {
   const percentage = activeIndex * 100;
-  console.log('percentage:', percentage)
+  const scale = 1 / images.length;
   const ScrollIndicatorBar = styled.span`
     will-change: transform;
     background: #111;
@@ -16,7 +16,7 @@ function ScrollIndicator({ activeIndex, slideDirection, images }) {
     -webkit-transform-origin: 0 0;
     -ms-transform-origin: 0 0;
     transform: scaleX(0.11) ${percentage};
-    transform: ${() => `scaleX(0.111111) translateX(${percentage}%)`};
+    transform: ${() => `scaleX(${scale}) translateX(${percentage}%)`};
     transform - origin: 0 0;
     transition: 5s;
     display: block;
@@ -33,6 +33,7 @@ function ScrollIndicator({ activeIndex, slideDirection, images }) {
 ScrollIndicator.propTypes = {
   activeIndex: PropTypes.instanceOf(Number).isRequired,
   slideDirection: PropTypes.instanceOf(String).isRequired,
+  images: PropTypes.instanceOf(Array).isRequired,
 };
 
 export default ScrollIndicator;
