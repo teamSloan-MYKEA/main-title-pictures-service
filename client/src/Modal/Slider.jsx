@@ -36,14 +36,17 @@ class Slider extends Component {
 
   goToNextSlide() {
     const { images } = this.state;
-    let { activeIndex } = this.state;
+    let { slideDirection, activeIndex } = this.state;
     activeIndex = activeIndex === (images.length - 1) ? (images.length - 1) : activeIndex += 1;
-    this.setState({ activeIndex });
+    slideDirection = 'right';
+    this.setState({ activeIndex, slideDirection });
+    console.log(this.state.slideDirection);
   }
 
   goToPreviousSlide() {
-    let { activeIndex } = this.state;
+    let { activeIndex, slideDirection } = this.state;
     activeIndex = activeIndex < 1 ? 0 : activeIndex -= 1;
+
     this.setState({ activeIndex });
   }
 
