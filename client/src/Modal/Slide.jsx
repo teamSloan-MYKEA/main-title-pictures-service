@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import InnerImageZoom from 'react-inner-image-zoom';
-import { ImageSlideRight, ImageSlideLeft, ImageSlideUp, InnerImageGlobalStyle } from '../Styles';
+import {
+  ImageSlideRight, ImageSlideLeft, ImageSlideUp, InnerImageGlobalStyle,
+} from '../Styles';
 
 function Slide({ images, activeIndex, slideDirection }) {
   return (
@@ -33,6 +35,7 @@ function Slide({ images, activeIndex, slideDirection }) {
                     <InnerImageZoom src={image.url} alt="IKEA furniture" />
                   </ImageSlideUp>
                 );
+                // If end of carousel is reached, do not animate:
                 default: return (
                   <div>
                     <InnerImageGlobalStyle />

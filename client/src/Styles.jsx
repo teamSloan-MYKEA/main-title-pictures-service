@@ -55,10 +55,47 @@ const ButtonLabel = styled.span`
   -webkit-box-orient: vertical;
   overflow: hidden;
 `;
+// Modal Container
+const ModalContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  background: rgba(0,0,0,0.6);
+  `;
+const GlobalModalStyle = createGlobalStyle`
+  body {
+    overflow: hidden;
+  }
+
+  .inactive {
+    display: none;
+  }
+
+  .active {
+    display: block;
+  }
+`;
+const ModalMain = styled.section`
+  position: fixed;
+  background: white;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  `;
+const ModalTitleContainer = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 1.5625rem 2.3125rem;
+`;
 // Close Modal Icon
 const CloseIcon = styled.svg`
-height: 1.5rem;
-width: 1.5rem;
+height: 1rem;
+width: 1rem;
 cursor: pointer;
 `;
 // Carousel Images: Moved to InnerImageGlobalStyle:
@@ -144,7 +181,7 @@ const SlideToTop = keyframes`
     transform: translateX(0);
   }
 `;
-const animationSpeed = '0.3s linear';
+const animationSpeed = '0.3s ease forwards';
 const ImageSlideRight = styled.div`
   animation: ${SlideToRight} ${animationSpeed};
 `;
@@ -275,7 +312,8 @@ const InnerImageGlobalStyle = createGlobalStyle`
 
 export {
   Img, RangeRevampAspectRatioImage, RangeRevampMediaGridMediaContainer, Button,
-  SpanButtonCopy, ButtonLabel, CloseIcon, CarouselImage, CarouselArrow,
+  SpanButtonCopy, ButtonLabel, ModalContainer, GlobalModalStyle,
+  ModalMain, ModalTitleContainer, CloseIcon, CarouselImage, CarouselArrow,
   ScrollIndicatorBar, ScrollIndicatorBarWrapper, ScrollIndicatorButton,
   CarouselContent, ImageSlideRight, ImageSlideLeft, ImageSlideUp, InnerImageGlobalStyle,
 };

@@ -6,7 +6,7 @@ function ScrollIndicator({ activeIndex }) {
   return (
     <ScrollIndicatorButton>
       <ScrollIndicatorBarWrapper>
-        <ScrollIndicatorBar></ScrollIndicatorBar>
+        <ScrollIndicatorBar />
       </ScrollIndicatorBarWrapper>
     </ScrollIndicatorButton>
   );

@@ -53,7 +53,7 @@ class Slider extends Component {
 
   render() {
     const {
-      images, activeIndex, openImage, close, slideDirection
+      images, activeIndex, openImage, close, slideDirection,
     } = this.state;
     return (
       <div>
