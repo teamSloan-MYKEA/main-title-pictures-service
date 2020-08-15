@@ -107,7 +107,7 @@ height: 1rem;
 width: 1rem;
 cursor: pointer;
 `;
-// Carousel Images: Moved to InnerImageGlobalStyle:
+// Carousel Images NO LONGER USED. Moved to InnerImageGlobalStyle:
 const CarouselImage = styled.img`
   max-height: 75vh;
   max-width: 100%;
@@ -131,8 +131,15 @@ const CarouselArrow = styled.div`
   }
 `;
 // Carousel Scroll Bar
+// const ScrollTest = keyframes`
+//   from {
+//     transform: scaleX(0);
+//   }
+//   to {
+//     transform: scaleX(0.111111) translateX(300%);
+//   }
+// `;
 const ScrollIndicatorBar = styled.span`
-  transform: scaleX:(0.11) translateX(600%);
   will-change: transform;
   background: #111;
   position: absolute;
@@ -141,6 +148,7 @@ const ScrollIndicatorBar = styled.span`
   width: 100%;
   -webkit-transform-origin: 0 0;
   -ms-transform-origin: 0 0;
+  transform: scaleX(0.11);
   transform-origin: 0 0;
   display: block;
 `;
