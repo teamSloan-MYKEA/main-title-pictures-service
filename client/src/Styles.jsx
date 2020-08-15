@@ -131,28 +131,7 @@ const CarouselArrow = styled.div`
   }
 `;
 // Carousel Scroll Bar
-// const ScrollTest = keyframes`
-//   from {
-//     transform: scaleX(0);
-//   }
-//   to {
-//     transform: scaleX(0.111111) translateX(300%);
-//   }
-// `;
-const ScrollIndicatorBar = styled.span`
-  will-change: transform;
-  background: #111;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  -webkit-transform-origin: 0 0;
-  -ms-transform-origin: 0 0;
-  transform: scaleX(0.11);
-  transform-origin: 0 0;
-  transition: 5s;
-  display: block;
-`;
+// Scroll Indicator Bar found inline.
 const ScrollIndicatorBarWrapper = styled.span`
   width: 100%;
   background: #dfdfdf;
@@ -165,16 +144,18 @@ const ScrollIndicatorBarWrapper = styled.span`
   display: block;
 `;
 const ScrollIndicatorButton = styled.button`
-  height: 1.375rem;
+  // height: 1.375rem;
+  height: 10rem;
   position: relative;
   width: 100%;
   outline: none;
   border: 0;
   padding: 0;
-  background: transparent;
+  // background: transparent;
+  background: green;
   display: block;
 `;
-// Animation Test
+// Carousel Animations
 const SlideToRight = keyframes`
   from {
     transform: translateX(-900px);
@@ -333,6 +314,6 @@ export {
   RangeRevampAspectRatioImage, RangeRevampMediaGridMediaContainer, Button,
   SpanButtonCopy, ButtonLabel, ModalContainer, GlobalModalStyle,
   ModalMain, ModalTitleContainer, CloseIcon, CarouselImage, CarouselArrow,
-  ScrollIndicatorBar, ScrollIndicatorBarWrapper, ScrollIndicatorButton,
+  ScrollIndicatorBarWrapper, ScrollIndicatorButton,
   CarouselContent, ImageSlideRight, ImageSlideLeft, ImageSlideUp, InnerImageGlobalStyle,
 };

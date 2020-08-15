@@ -21,8 +21,13 @@ function ScrollIndicator({ activeIndex, images }) {
     transition: 5s;
     display: block;
 `;
+  const clickTest = (e) => {
+    const currentTargetRect = e.currentTarget.getBoundingClientRect();
+    const eventOffsetX = e.pageX - currentTargetRect.left;
+    console.log("offsetX:", eventOffsetX)
+  };
   return (
-    <ScrollIndicatorButton>
+    <ScrollIndicatorButton onClick={clickTest}>
       <ScrollIndicatorBarWrapper>
         <ScrollIndicatorBar />
       </ScrollIndicatorBarWrapper>
