@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ScrollIndicatorBarWrapper, ScrollIndicatorButton } from '../Styles';
 
-function ScrollIndicator({ activeIndex, images }) {
+function ScrollIndicator({ activeIndex, images, goToSlide }) {
   const percentage = activeIndex * 100;
   const scale = 1 / images.length;
   const ScrollIndicatorBar = styled.span`
@@ -24,7 +24,21 @@ function ScrollIndicator({ activeIndex, images }) {
   const clickTest = (e) => {
     const currentTargetRect = e.currentTarget.getBoundingClientRect();
     const eventOffsetX = e.pageX - currentTargetRect.left;
-    console.log("offsetX:", eventOffsetX)
+    const buttonWidth = (currentTargetRect.width / images.length);
+    const clickPosition = eventOffsetX;
+    let targetButtonIndex = 0;
+    let counter = 0;
+    const recurse = (click) => {
+      if (click < buttonWidth) {
+        targetButtonIndex = counter;
+        return;
+      }
+      counter += 1;
+      recurse(click - buttonWidth);
+    };
+    recurse(clickPosition);
+    console.log('Index of button to go to:', targetButtonIndex);
+    return targetButtonIndex;
   };
   return (
     <ScrollIndicatorButton onClick={clickTest}>
@@ -37,6 +51,7 @@ function ScrollIndicator({ activeIndex, images }) {
 ScrollIndicator.propTypes = {
   activeIndex: PropTypes.instanceOf(Number).isRequired,
   images: PropTypes.instanceOf(Array).isRequired,
+  goToSlide: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default ScrollIndicator;
