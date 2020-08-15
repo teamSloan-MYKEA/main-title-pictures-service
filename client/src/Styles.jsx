@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, keyframes } from 'styled-components';
 
 // Main Item Grid Images
 const Img = styled.img`
@@ -77,6 +77,7 @@ const CarouselContent = styled.div`
 `;
 // Carousel Arrows
 const CarouselArrow = styled.div`
+  cursor: pointer;
   opacity: 0;
   transition: all 0.3s ease;
   ${CarouselContent}:hover & {
@@ -117,6 +118,18 @@ const ScrollIndicatorButton = styled.button`
   padding: 0;
   background: transparent;
   display: block;
+`;
+// Animation Test
+const SlideToRight = keyframes`
+  from {
+    transform: translateX(-900px);
+  }
+  to {
+    transform: translateX(0);
+  }
+`;
+const ImageSlide = styled.div`
+  animation: ${SlideToRight} 0.3s linear
 `;
 // Inner Image Zoom
 const InnerImageGlobalStyle = createGlobalStyle`
@@ -241,5 +254,5 @@ export {
   Img, RangeRevampAspectRatioImage, RangeRevampMediaGridMediaContainer, Button,
   SpanButtonCopy, ButtonLabel, CloseIcon, CarouselImage, CarouselArrow,
   ScrollIndicatorBar, ScrollIndicatorBarWrapper, ScrollIndicatorButton,
-  CarouselContent, InnerImageGlobalStyle,
+  CarouselContent, ImageSlide, InnerImageGlobalStyle,
 };
