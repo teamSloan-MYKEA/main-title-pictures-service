@@ -97,7 +97,7 @@ class Slider extends Component {
             </CarouselArrow>
           )}
         </CarouselContent>
-        <ScrollIndicator activeIndex={activeIndex} images={images} goToSlide={goToSlide} />
+        <ScrollIndicator activeIndex={activeIndex} images={images} goToSlide={this.goToSlide} />
       </div>
     );
   }

@@ -15,7 +15,6 @@ function ScrollIndicator({ activeIndex, images, goToSlide }) {
     width: 100%;
     -webkit-transform-origin: 0 0;
     -ms-transform-origin: 0 0;
-    transform: scaleX(0.11) ${percentage};
     transform: ${() => `scaleX(${scale}) translateX(${percentage}%)`};
     transform - origin: 0 0;
     transition: 5s;
@@ -41,7 +40,7 @@ function ScrollIndicator({ activeIndex, images, goToSlide }) {
     return targetButtonIndex;
   };
   return (
-    <ScrollIndicatorButton onClick={clickTest}>
+    <ScrollIndicatorButton onClick={() => { clickTest(); }}>
       <ScrollIndicatorBarWrapper>
         <ScrollIndicatorBar />
       </ScrollIndicatorBarWrapper>
