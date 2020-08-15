@@ -128,8 +128,19 @@ const SlideToRight = keyframes`
     transform: translateX(0);
   }
 `;
-const ImageSlide = styled.div`
-  animation: ${SlideToRight} 0.3s linear
+const SlideToLeft = keyframes`
+  from {
+    transform: translateX(900px);
+  }
+  to {
+    transform: translateX(0);
+  }
+`;
+const ImageSlideRight = styled.div`
+  animation: ${SlideToRight} 0.3s linear;
+`;
+const ImageSlideLeft = styled.div`
+  animation: ${SlideToLeft} 0.3s linear;
 `;
 // Inner Image Zoom
 const InnerImageGlobalStyle = createGlobalStyle`
@@ -254,5 +265,5 @@ export {
   Img, RangeRevampAspectRatioImage, RangeRevampMediaGridMediaContainer, Button,
   SpanButtonCopy, ButtonLabel, CloseIcon, CarouselImage, CarouselArrow,
   ScrollIndicatorBar, ScrollIndicatorBarWrapper, ScrollIndicatorButton,
-  CarouselContent, ImageSlide, InnerImageGlobalStyle,
+  CarouselContent, ImageSlideRight, ImageSlideLeft, InnerImageGlobalStyle,
 };

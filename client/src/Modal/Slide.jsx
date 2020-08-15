@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import InnerImageZoom from 'react-inner-image-zoom';
-import { ImageSlide, InnerImageGlobalStyle } from '../Styles';
+import { ImageSlideRight, ImageSlideLeft, InnerImageGlobalStyle } from '../Styles';
 
 function Slide({ images, activeIndex, slideDirection }) {
   return (
@@ -13,11 +13,29 @@ function Slide({ images, activeIndex, slideDirection }) {
               index === activeIndex ? 'active' : 'inactive'
             }
           >
-            <ImageSlide>
-              <InnerImageGlobalStyle />
-              <InnerImageZoom src={image.url} alt="IKEA furniture" />
+            {(() => {
+              switch (slideDirection) {
+                case 'left': return (
+                  <ImageSlideRight>
+                    <InnerImageGlobalStyle />
+                    <InnerImageZoom src={image.url} alt="IKEA furniture" />
 
-            </ImageSlide>
+                  </ImageSlideRight>
+                );
+                case 'right': return (
+                  <ImageSlideLeft>
+                    <InnerImageGlobalStyle />
+                    <InnerImageZoom src={image.url} alt="IKEA furniture" />
+                  </ImageSlideLeft>
+                );
+                default: return (
+                  <div>
+                    <InnerImageGlobalStyle />
+                    <InnerImageZoom src={image.url} alt="IKEA furniture" />
+                  </div>
+                );
+              }
+            })()}
           </div>
         ))
       }
