@@ -40,19 +40,18 @@ class Slider extends Component {
     activeIndex = activeIndex === (images.length - 1) ? (images.length - 1) : activeIndex += 1;
     slideDirection = 'right';
     this.setState({ activeIndex, slideDirection });
-    console.log(this.state.slideDirection);
   }
 
   goToPreviousSlide() {
     let { activeIndex, slideDirection } = this.state;
     activeIndex = activeIndex < 1 ? 0 : activeIndex -= 1;
-
-    this.setState({ activeIndex });
+    slideDirection = 'left';
+    this.setState({ activeIndex, slideDirection });
   }
 
   render() {
     const {
-      images, activeIndex, openImage, close,
+      images, activeIndex, openImage, close, slideDirection
     } = this.state;
     return (
       <div>
@@ -72,7 +71,12 @@ class Slider extends Component {
           <CarouselArrow>
             <FontAwesomeIcon icon={faArrowLeft} onClick={() => this.goToPreviousSlide()} />
           </CarouselArrow>
-          <Slide activeIndex={activeIndex} images={images} openImage={openImage} />
+          <Slide
+            activeIndex={activeIndex}
+            images={images}
+            openImage={openImage}
+            slideDirection={slideDirection}
+          />
           <CarouselArrow>
             <FontAwesomeIcon icon={faArrowRight} onClick={() => this.goToNextSlide()} />
           </CarouselArrow>

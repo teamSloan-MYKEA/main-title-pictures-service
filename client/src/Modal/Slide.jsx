@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import InnerImageZoom from 'react-inner-image-zoom';
 import { ImageSlide, InnerImageGlobalStyle } from '../Styles';
 
-function Slide({ images, activeIndex }) {
+function Slide({ images, activeIndex, slideDirection }) {
   return (
     <section>
       {
@@ -27,6 +27,7 @@ function Slide({ images, activeIndex }) {
 Slide.propTypes = {
   images: PropTypes.instanceOf(Array).isRequired,
   activeIndex: PropTypes.instanceOf(Number).isRequired,
+  slideDirection: PropTypes.instanceOf(String).isRequired,
 };
 
 export default Slide;
