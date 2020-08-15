@@ -55,6 +55,7 @@ class Slider extends Component {
     const {
       images, activeIndex, openImage, close, slideDirection,
     } = this.state;
+    console.log('current active index:', activeIndex)
     return (
       <div>
         <KeyboardEventHandler
@@ -70,9 +71,11 @@ class Slider extends Component {
           }}
         />
         <CarouselContent className="carousel-content">
-          <CarouselArrow>
-            <FontAwesomeIcon icon={faArrowLeft} onClick={() => this.goToPreviousSlide()} />
-          </CarouselArrow>
+          {activeIndex === 0 ? <div /> : (
+            <CarouselArrow>
+              <FontAwesomeIcon icon={faArrowLeft} onClick={() => this.goToPreviousSlide()} />
+            </CarouselArrow>
+          )}
           <Slide
             activeIndex={activeIndex}
             images={images}
