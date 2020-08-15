@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ScrollIndicatorBarWrapper, ScrollIndicatorButton } from '../Styles';
 
-function ScrollIndicator({ activeIndex, slideDirection, images }) {
+function ScrollIndicator({ activeIndex, images }) {
   const percentage = activeIndex * 100;
   const scale = 1 / images.length;
   const ScrollIndicatorBar = styled.span`
@@ -24,7 +24,6 @@ function ScrollIndicator({ activeIndex, slideDirection, images }) {
   return (
     <ScrollIndicatorButton>
       <ScrollIndicatorBarWrapper>
-        {/* <ScrollIndicatorBar /> */}
         <ScrollIndicatorBar />
       </ScrollIndicatorBarWrapper>
     </ScrollIndicatorButton>
@@ -32,7 +31,6 @@ function ScrollIndicator({ activeIndex, slideDirection, images }) {
 }
 ScrollIndicator.propTypes = {
   activeIndex: PropTypes.instanceOf(Number).isRequired,
-  slideDirection: PropTypes.instanceOf(String).isRequired,
   images: PropTypes.instanceOf(Array).isRequired,
 };
 
