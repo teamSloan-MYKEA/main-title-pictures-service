@@ -23,7 +23,7 @@ function ScrollIndicator({ activeIndex, images, goToSlide }) {
   // Returns which button index is clicked
   const clickSlide = (e) => {
     const currentTargetRect = e.currentTarget.getBoundingClientRect();
-    const buttonWidth = (currentTargetRect.width / images.length);
+    const buttonWidth = (currentTargetRect.width * scale);
     const clickPosition = e.pageX - currentTargetRect.left;
     let targetButtonIndex = 0;
     let counter = 0;
