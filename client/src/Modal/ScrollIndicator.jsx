@@ -1,11 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { createGlobalStyle } from 'styled-components';
+import { ScrollIndicatorBar, ScrollIndicatorBarWrapper, ScrollIndicatorButton } from '../Styles';
 
-function ScrollIndicator() {
+function ScrollIndicator({ activeIndex, slideDirection }) {
   return (
-    <div>Hello from ScrollIndicator</div>
+    <ScrollIndicatorButton>
+      <ScrollIndicatorBarWrapper>
+        <ScrollIndicatorBar />
+      </ScrollIndicatorBarWrapper>
+    </ScrollIndicatorButton>
   );
 }
+ScrollIndicator.propTypes = {
+  activeIndex: PropTypes.instanceOf(Number).isRequired,
+  slideDirection: PropTypes.instanceOf(String).isRequired,
+};
 
 export default ScrollIndicator;

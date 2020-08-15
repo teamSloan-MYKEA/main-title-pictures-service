@@ -5,15 +5,17 @@ import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ScrollIndicator from './ScrollIndicator';
 import Slide from './Slide';
+import { CarouselContent, CarouselArrow } from '../Styles';
 
 class Slider extends Component {
   constructor({ images, openImage, close }) {
-    super(images, openImage);
+    super();
     this.state = {
       activeIndex: 0,
       images,
       openImage,
       close,
+      slideDirection: '',
     };
     this.goToPreviousSlide = this.goToPreviousSlide.bind(this);
     this.goToNextSlide = this.goToNextSlide.bind(this);
@@ -22,6 +24,7 @@ class Slider extends Component {
   // First modal image matches user click
   componentDidMount() {
     const { images, openImage } = this.state;
+    let { slideDirection } = this.state;
     let openImageIndex = 0;
     images.forEach((image, index) => {
       if (image.url === openImage) {
@@ -29,25 +32,28 @@ class Slider extends Component {
       }
       return 0;
     });
-    this.setState({ activeIndex: openImageIndex });
+    slideDirection = 'up';
+    this.setState({ activeIndex: openImageIndex, slideDirection });
   }
 
   goToNextSlide() {
     const { images } = this.state;
-    let { activeIndex } = this.state;
+    let { slideDirection, activeIndex } = this.state;
     activeIndex = activeIndex === (images.length - 1) ? (images.length - 1) : activeIndex += 1;
-    this.setState({ activeIndex });
+    slideDirection = 'right';
+    this.setState({ activeIndex, slideDirection });
   }
 
   goToPreviousSlide() {
-    let { activeIndex } = this.state;
+    let { activeIndex, slideDirection } = this.state;
     activeIndex = activeIndex < 1 ? 0 : activeIndex -= 1;
-    this.setState({ activeIndex });
+    slideDirection = 'left';
+    this.setState({ activeIndex, slideDirection });
   }
 
   render() {
     const {
-      images, activeIndex, openImage, close,
+      images, activeIndex, openImage, close, slideDirection,
     } = this.state;
     return (
       <div>
@@ -63,12 +69,27 @@ class Slider extends Component {
             }
           }}
         />
-        <div className="slider" style={{ display: 'flex', alignItems: 'center' }}>
-          <FontAwesomeIcon icon={faArrowLeft} onClick={() => this.goToPreviousSlide()} />
-          <Slide activeIndex={activeIndex} images={images} openImage={openImage} />
-          <FontAwesomeIcon icon={faArrowRight} onClick={() => this.goToNextSlide()} />
-        </div>
-        <ScrollIndicator />
+        <CarouselContent className="carousel-content">
+          {/* Left arrow disappears at end of carousel */}
+          {activeIndex === 0 ? <div /> : (
+            <CarouselArrow>
+              <FontAwesomeIcon icon={faArrowLeft} onClick={() => this.goToPreviousSlide()} />
+            </CarouselArrow>
+          )}
+          <Slide
+            activeIndex={activeIndex}
+            images={images}
+            openImage={openImage}
+            slideDirection={slideDirection}
+          />
+          {/* Right arrow disappears at end of carousel */}
+          {activeIndex === images.length - 1 ? <div /> : (
+            <CarouselArrow>
+              <FontAwesomeIcon icon={faArrowRight} onClick={() => this.goToNextSlide()} />
+            </CarouselArrow>
+          )}
+        </CarouselContent>
+        <ScrollIndicator activeIndex={activeIndex} slideDirection={slideDirection} />
       </div>
     );
   }
