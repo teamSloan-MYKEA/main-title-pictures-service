@@ -15,6 +15,7 @@ class Slider extends Component {
       images,
       openImage,
       close,
+      slideDirection: '',
     };
     this.goToPreviousSlide = this.goToPreviousSlide.bind(this);
     this.goToNextSlide = this.goToNextSlide.bind(this);
