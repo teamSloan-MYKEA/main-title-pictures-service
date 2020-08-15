@@ -19,6 +19,7 @@ class Slider extends Component {
     };
     this.goToPreviousSlide = this.goToPreviousSlide.bind(this);
     this.goToNextSlide = this.goToNextSlide.bind(this);
+    this.goToSlide = this.goToSlide.bind(this);
   }
 
   // First modal image matches user click
@@ -48,6 +49,13 @@ class Slider extends Component {
     let { activeIndex, slideDirection } = this.state;
     activeIndex = activeIndex < 1 ? 0 : activeIndex -= 1;
     slideDirection = 'left';
+    this.setState({ activeIndex, slideDirection });
+  }
+
+  goToSlide(targetIndex) {
+    let { activeIndex, slideDirection } = this.state;
+    slideDirection = activeIndex > targetIndex ? 'left' : 'right';
+    activeIndex = targetIndex;
     this.setState({ activeIndex, slideDirection });
   }
 
@@ -89,7 +97,7 @@ class Slider extends Component {
             </CarouselArrow>
           )}
         </CarouselContent>
-        <ScrollIndicator activeIndex={activeIndex} slideDirection={slideDirection} />
+        <ScrollIndicator activeIndex={activeIndex} images={images} goToSlide={this.goToSlide} />
       </div>
     );
   }
