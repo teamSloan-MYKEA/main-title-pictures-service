@@ -1,21 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import { RangeMediaGridStyle } from './Styles';
 import RangeRevampMediaGrid from './RangeRevampMediaGrid';
 import RangeRevampButton from './RangeRevampButton';
 
 function RangeMediaGrid({
   images, handleClick, showModal, isCollapsed,
 }) {
-  const Grid = styled.div`
-    position: relative;
-    margin-bottom: 3.75rem;
-  `;
   return (
-    <Grid>
+    <RangeMediaGridStyle>
       <RangeRevampMediaGrid images={images} showModal={showModal} />
       <RangeRevampButton handleClick={handleClick} isCollapsed={isCollapsed} />
-    </Grid>
+    </RangeMediaGridStyle>
   );
 }
 RangeMediaGrid.propTypes = {

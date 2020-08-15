@@ -11,13 +11,22 @@ const Img = styled.img`
   max-width: 100%;
   cursor: pointer;
   `;
+const RangeMediaGridStyle = styled.div`
+position: relative;
+margin-bottom: 3.75rem;
+`;
+const Grid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -.625rem;
+  margin-right: -.625rem;
+`;
 const RangeRevampAspectRatioImage = styled.div`
   width: 100%;
   position: relative;
   height: auto;
   display: block;
   box-sizing: border-box;
-  background-color: red;
 `;
 const RangeRevampMediaGridMediaContainer = styled.div`
   flex: none;
@@ -311,7 +320,8 @@ const InnerImageGlobalStyle = createGlobalStyle`
 `;
 
 export {
-  Img, RangeRevampAspectRatioImage, RangeRevampMediaGridMediaContainer, Button,
+  Img, RangeMediaGridStyle, Grid,
+  RangeRevampAspectRatioImage, RangeRevampMediaGridMediaContainer, Button,
   SpanButtonCopy, ButtonLabel, ModalContainer, GlobalModalStyle,
   ModalMain, ModalTitleContainer, CloseIcon, CarouselImage, CarouselArrow,
   ScrollIndicatorBar, ScrollIndicatorBarWrapper, ScrollIndicatorButton,
