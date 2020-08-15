@@ -144,15 +144,13 @@ const ScrollIndicatorBarWrapper = styled.span`
   display: block;
 `;
 const ScrollIndicatorButton = styled.button`
-  // height: 1.375rem;
-  height: 10rem;
+  height: 1.375rem;
   position: relative;
   width: 100%;
   outline: none;
   border: 0;
   padding: 0;
-  // background: transparent;
-  background: green;
+  background: transparent;
   display: block;
 `;
 // Carousel Animations

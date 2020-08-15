@@ -20,7 +20,7 @@ function ScrollIndicator({ activeIndex, images, goToSlide }) {
     transition: 5s;
     display: block;
 `;
-  // Returns which button index to click
+  // Returns which button index to go to
   const clickSlide = (e) => {
     const currentTargetRect = e.currentTarget.getBoundingClientRect();
     const eventOffsetX = e.pageX - currentTargetRect.left;
@@ -37,10 +37,14 @@ function ScrollIndicator({ activeIndex, images, goToSlide }) {
       recurse(click - buttonWidth);
     };
     recurse(clickPosition);
+    console.log("targetButton from clickslide", targetButtonIndex);
     return targetButtonIndex;
   };
   return (
-    <ScrollIndicatorButton onClick={(e) => { goToSlide(clickSlide(e)); }}>
+    <ScrollIndicatorButton onClick={(e) => {
+      // goToSlide(clickSlide(e));
+      goToSlide(clickSlide(e));
+    }}>
       <ScrollIndicatorBarWrapper>
         <ScrollIndicatorBar />
       </ScrollIndicatorBarWrapper>
