@@ -89,7 +89,7 @@ class Slider extends Component {
             </CarouselArrow>
           )}
         </CarouselContent>
-        <ScrollIndicator activeIndex={activeIndex} />
+        <ScrollIndicator activeIndex={activeIndex} slideDirection={slideDirection} />
       </div>
     );
   }

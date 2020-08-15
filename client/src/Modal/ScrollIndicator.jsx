@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ScrollIndicatorBar, ScrollIndicatorBarWrapper, ScrollIndicatorButton } from '../Styles';
 
-function ScrollIndicator({ activeIndex }) {
+function ScrollIndicator({ activeIndex, slideDirection }) {
   return (
     <ScrollIndicatorButton>
       <ScrollIndicatorBarWrapper>
@@ -13,6 +13,7 @@ function ScrollIndicator({ activeIndex }) {
 }
 ScrollIndicator.propTypes = {
   activeIndex: PropTypes.instanceOf(Number).isRequired,
+  slideDirection: PropTypes.instanceOf(String).isRequired,
 };
 
 export default ScrollIndicator;

@@ -150,6 +150,7 @@ const ScrollIndicatorBar = styled.span`
   -ms-transform-origin: 0 0;
   transform: scaleX(0.11);
   transform-origin: 0 0;
+  transition: 5s;
   display: block;
 `;
 const ScrollIndicatorBarWrapper = styled.span`
