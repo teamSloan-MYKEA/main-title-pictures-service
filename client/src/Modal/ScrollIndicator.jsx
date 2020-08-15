@@ -20,21 +20,20 @@ function ScrollIndicator({ activeIndex, images, goToSlide }) {
     transition: 5s;
     display: block;
 `;
-  // Returns which button index to go to
+  // Returns which button index is clicked
   const clickSlide = (e) => {
     const currentTargetRect = e.currentTarget.getBoundingClientRect();
-    const eventOffsetX = e.pageX - currentTargetRect.left;
     const buttonWidth = (currentTargetRect.width / images.length);
-    const clickPosition = eventOffsetX;
+    const clickPosition = e.pageX - currentTargetRect.left;
     let targetButtonIndex = 0;
     let counter = 0;
-    const recurse = (click) => {
-      if (click < buttonWidth) {
+    const recurse = (xOffsetLeft) => {
+      if (xOffsetLeft < buttonWidth) {
         targetButtonIndex = counter;
         return;
       }
       counter += 1;
-      recurse(click - buttonWidth);
+      recurse(xOffsetLeft - buttonWidth);
     };
     recurse(clickPosition);
     return targetButtonIndex;
