@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
       images: [],
       isCollapsed: true,
-      productId: 2,
+      productId: window.location.pathname.split('/')[1],
       show: false,
       modalPicture: '',
     };

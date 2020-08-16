@@ -10,8 +10,8 @@ const port = process.env.PORT || 3000;
 app.use('/:id', (req, res) => {
   db.getPictures(req.params.id)
     .then(((urls) => {
-      res.send(urls);
       express.static(path.join(__dirname, '..', '/client', '/dist'));
+      res.send(urls);
     }))
     .catch(() => res.status(500).send('Internal Server Error'));
 });
