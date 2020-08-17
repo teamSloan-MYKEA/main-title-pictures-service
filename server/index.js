@@ -5,10 +5,10 @@ const db = require('../db/index.js');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use('/api/:id', express.static(path.join(__dirname, '..', '/client', '/dist')));
+app.use('/:id', express.static(path.join(__dirname, '..', '/client', '/dist')));
 
 // Use express params
-app.get('/api/:id', (req, res) => {
+app.get('/:id/api/:id', (req, res) => {
   console.log('REcieved request', req.params.id);
   db.getPictures(req.params.id)
     .then((urls) => res.send(urls))
