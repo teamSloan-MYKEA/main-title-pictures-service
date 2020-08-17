@@ -13,4 +13,7 @@ module.exports = {
     'shared-node-browser': true,
     jest: true,
   },
+  rules: {
+    'no-console': 'off',
+  },
 };
