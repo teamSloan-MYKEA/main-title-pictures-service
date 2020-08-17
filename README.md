@@ -1,19 +1,18 @@
 # Project Name
 
-> Project description
-
+> MYKEA Main Pictures Display and Carousel Modal
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/hrr47-fec-omalley/reviews-service
+  - https://github.com/hrr47-fec-omalley/similar-products-service
+  - https://github.com/hrr47-fec-omalley/add-to-bag-service
+  - https://github.com/hrr47-fec-omalley/main-title-pictures-service
 
 ## Table of Contents
 
 1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
+2. [Requirements](#requirements)
+3. [Development](#development)
 
 ## Usage
 
