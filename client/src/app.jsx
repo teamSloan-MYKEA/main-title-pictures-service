@@ -29,7 +29,7 @@ class App extends Component {
     // 2nd arg can contain params
     // Maybe send to /products with request.params as id
     // window.location.pathname.split('/')[1]
-    axios.get(`/${productId}`)
+    axios.get(`${productId}`)
       .then((response) => {
         response.data.forEach((imageObj) => {
           this.setState(({ images }) => ({
