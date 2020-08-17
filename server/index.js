@@ -9,7 +9,6 @@ app.use('/:id', express.static(path.join(__dirname, '..', '/public')));
 
 // Use express params
 app.get('/:id/api/:id', (req, res) => {
-  console.log('REcieved request', req.params.id);
   db.getPictures(req.params.id)
     .then((urls) => res.send(urls))
     .catch(() => res.status(500).send('Internal Server Error'));
