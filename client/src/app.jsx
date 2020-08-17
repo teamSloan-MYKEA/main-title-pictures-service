@@ -10,7 +10,6 @@ class App extends Component {
     this.state = {
       images: [],
       isCollapsed: true,
-      productId: 2,
       show: false,
       modalPicture: '',
     };
@@ -24,11 +23,7 @@ class App extends Component {
   }
 
   getImages() {
-    const { productId } = this.state;
-    // 2nd arg can contain params
-    // Maybe send to /products with request.params as id
-    // window.location.pathname.split('/')[1]
-    axios.get(`/${productId}`)
+    axios.get(`api${window.location.pathname}`)
       .then((response) => {
         response.data.forEach((imageObj) => {
           this.setState(({ images }) => ({

@@ -5,10 +5,10 @@ const db = require('../db/index.js');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, '..', '/client', '/dist')));
+app.use('/:id', express.static(path.join(__dirname, '..', '/public')));
 
 // Use express params
-app.get('/:id', (req, res) => {
+app.get('/:id/api/:id', (req, res) => {
   db.getPictures(req.params.id)
     .then((urls) => res.send(urls))
     .catch(() => res.status(500).send('Internal Server Error'));
