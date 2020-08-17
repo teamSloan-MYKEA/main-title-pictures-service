@@ -5,7 +5,7 @@ const db = require('../db/index.js');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use('/:id', express.static(path.join(__dirname, '..', '/client', '/dist')));
+app.use('/:id', express.static(path.join(__dirname, '..', '/public')));
 
 // Use express params
 app.get('/:id/api/:id', (req, res) => {
