@@ -23,7 +23,6 @@ class App extends Component {
   }
 
   getImages() {
-    console.log("From get images!")
     axios.get(`api${window.location.pathname}`)
       .then((response) => {
         console.log("response from pictures server", response)
