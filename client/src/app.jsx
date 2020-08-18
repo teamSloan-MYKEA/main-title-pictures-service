@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   getImages() {
-    axios.get(`api${window.location.pathname}`)
+    axios.get(`pictures${window.location.pathname}`)
       .then((response) => {
         console.log("response from pictures server", response)
         response.data.forEach((imageObj) => {
