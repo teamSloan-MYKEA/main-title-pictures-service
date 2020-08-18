@@ -25,7 +25,6 @@ class App extends Component {
   getImages() {
     axios.get(`pictures${window.location.pathname}`)
       .then((response) => {
-        console.log("response from pictures server", response)
         response.data.forEach((imageObj) => {
           this.setState(({ images }) => ({
             images: images.concat(imageObj),
