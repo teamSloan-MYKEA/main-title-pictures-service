@@ -50,6 +50,7 @@ const Button = styled.button`
   transition-timing-function: ease;
   cursor: pointer;
   border-radius: 40px;
+  border: 0;
   `;
 const SpanButtonCopy = styled.span`
   display: flex;
@@ -73,6 +74,7 @@ const ModalContainer = styled.div`
   height: 100vh;
   overflow-y: hidden;
   background: rgba(0,0,0,0.6);
+  z-index: 1;
   `;
 const GlobalModalStyle = createGlobalStyle`
   body {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Reset } from 'styled-reset';
 import RangeMediaGrid from './RangeMediaGrid';
 import Modal from './Modal/ModalDashboard';
 
@@ -25,7 +24,6 @@ class App extends Component {
   getImages() {
     axios.get(`pictures${window.location.pathname}`)
       .then((response) => {
-        console.log("response from pictures server", response)
         response.data.forEach((imageObj) => {
           this.setState(({ images }) => ({
             images: images.concat(imageObj),
@@ -65,7 +63,6 @@ class App extends Component {
     } = this.state;
     return (
       <div>
-        <Reset />
         <RangeMediaGrid
           images={
             isCollapsed ? images.slice(0, 4) : images
