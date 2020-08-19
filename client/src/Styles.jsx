@@ -51,6 +51,7 @@ const Button = styled.button`
   cursor: pointer;
   border-radius: 40px;
   border: 0;
+  outline: 0;
   `;
 const SpanButtonCopy = styled.span`
   display: flex;
