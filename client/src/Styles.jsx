@@ -12,8 +12,9 @@ const Img = styled.img`
   cursor: pointer;
   `;
 const RangeMediaGridStyle = styled.div`
-position: relative;
-margin-bottom: 3.75rem;
+  position: relative;
+  margin-bottom: 3.75rem;
+  width: 40vw;
 `;
 const Grid = styled.div`
   display: flex;
