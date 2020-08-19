@@ -50,6 +50,7 @@ const Button = styled.button`
   transition-timing-function: ease;
   cursor: pointer;
   border-radius: 40px;
+  border: 0;
   `;
 const SpanButtonCopy = styled.span`
   display: flex;

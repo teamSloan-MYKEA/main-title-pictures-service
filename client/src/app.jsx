@@ -64,7 +64,7 @@ class App extends Component {
     } = this.state;
     return (
       <div>
-        <Reset />
+        {/* <Reset /> */}
         <RangeMediaGrid
           images={
             isCollapsed ? images.slice(0, 4) : images
