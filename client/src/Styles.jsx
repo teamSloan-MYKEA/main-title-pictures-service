@@ -25,7 +25,7 @@ padding: .0625rem .625rem;
 const RangeMediaGridStyle = window.styled.div`
 position: relative;
 margin-bottom: 3.75rem;
-width: 40vw;
+// width: 40vw;
 `;
 const Grid = window.styled.div`
 display: flex;
