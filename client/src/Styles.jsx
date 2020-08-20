@@ -1,7 +1,7 @@
-import styled, { createGlobalStyle, keyframes } from 'styled-components';
+// import styled, { createGlobalStyle, keyframes } from 'styled-components';
 
 // Main Item Grid Images
-const Img = styled.img`
+const Img = window.styled.img`
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -11,25 +11,25 @@ const Img = styled.img`
   max-width: 100%;
   cursor: pointer;
   `;
-const RangeMediaGridStyle = styled.div`
+const RangeMediaGridStyle = window.styled.div`
   position: relative;
   margin-bottom: 3.75rem;
   width: 40vw;
 `;
-const Grid = styled.div`
+const Grid = window.styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-left: -.625rem;
   margin-right: -.625rem;
 `;
-const RangeRevampAspectRatioImage = styled.div`
+const RangeRevampAspectRatioImage = window.styled.div`
   width: 100%;
   position: relative;
   height: auto;
   display: block;
   box-sizing: border-box;
 `;
-const RangeRevampMediaGridMediaContainer = styled.div`
+const RangeRevampMediaGridMediaContainer = window.styled.div`
   flex: none;
   margin-left: .625rem;
   margin-right: .625rem;
@@ -37,7 +37,7 @@ const RangeRevampMediaGridMediaContainer = styled.div`
   margin-bottom: 1.25rem;
 `;
 // Show more images Button
-const Button = styled.button`
+const Button = window.styled.button`
   display: block;
   margin: 1rem auto 0;
   -webkit-appearance: button;
@@ -54,21 +54,21 @@ const Button = styled.button`
   border: 0;
   outline: 0;
   `;
-const SpanButtonCopy = styled.span`
+const SpanButtonCopy = window.styled.span`
   display: flex;
   opacity: 1;
   transform: translateY(0);
   transition-property: opacity, transform, -webkit-transform;
   transition-timing-function: ease;
 `;
-const ButtonLabel = styled.span`
+const ButtonLabel = window.styled.span`
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 `;
 // Modal Container
-const ModalContainer = styled.div`
+const ModalContainer = window.styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -78,7 +78,7 @@ const ModalContainer = styled.div`
   background: rgba(0,0,0,0.6);
   z-index: 1;
   `;
-const GlobalModalStyle = createGlobalStyle`
+const GlobalModalStyle = window.styled.createGlobalStyle`
   body {
     overflow: hidden;
   }
@@ -91,7 +91,7 @@ const GlobalModalStyle = createGlobalStyle`
     display: block;
   }
 `;
-const ModalMain = styled.section`
+const ModalMain = window.styled.section`
   position: fixed;
   background: white;
   width: 100%;
@@ -100,19 +100,19 @@ const ModalMain = styled.section`
   left: 50%;
   transform: translate(-50%, -50%);
   `;
-const ModalTitleContainer = styled.div`
+const ModalTitleContainer = window.styled.div`
   display: flex;
   flex-direction: row-reverse;
   padding: 1.5625rem 2.3125rem;
 `;
 // Close Modal Icon
-const CloseIcon = styled.svg`
+const CloseIcon = window.styled.svg`
 height: 1rem;
 width: 1rem;
 cursor: pointer;
 `;
 // Carousel Images NO LONGER USED. Moved to InnerImageGlobalStyle:
-const CarouselImage = styled.img`
+const CarouselImage = window.styled.img`
   max-height: 75vh;
   max-width: 100%;
   width: auto;
@@ -120,13 +120,13 @@ const CarouselImage = styled.img`
   cursor: zoom-in;
 `;
 // Carousel Content
-const CarouselContent = styled.div`
+const CarouselContent = window.styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 // Carousel Arrows
-const CarouselArrow = styled.div`
+const CarouselArrow = window.styled.div`
   cursor: pointer;
   opacity: 0;
   transition: all 0.3s ease;
@@ -136,7 +136,7 @@ const CarouselArrow = styled.div`
 `;
 // Carousel Scroll Bar
 // Scroll Indicator Bar found inline.
-const ScrollIndicatorBarWrapper = styled.span`
+const ScrollIndicatorBarWrapper = window.styled.span`
   width: 100%;
   background: #dfdfdf;
   -webkit-transform: translateX(0);
@@ -147,7 +147,7 @@ const ScrollIndicatorBarWrapper = styled.span`
   -ms-overflow-style: none;
   display: block;
 `;
-const ScrollIndicatorButton = styled.button`
+const ScrollIndicatorButton = window.styled.button`
   height: 1.375rem;
   position: relative;
   width: 100%;
@@ -158,7 +158,7 @@ const ScrollIndicatorButton = styled.button`
   display: block;
 `;
 // Carousel Animations
-const SlideToRight = keyframes`
+const SlideToRight = window.styled.keyframes`
   from {
     transform: translateX(-900px);
   }
@@ -166,7 +166,7 @@ const SlideToRight = keyframes`
     transform: translateX(0);
   }
 `;
-const SlideToLeft = keyframes`
+const SlideToLeft = window.styled.keyframes`
   from {
     transform: translateX(900px);
   }
@@ -174,7 +174,7 @@ const SlideToLeft = keyframes`
     transform: translateX(0);
   }
 `;
-const SlideToTop = keyframes`
+const SlideToTop = window.styled.keyframes`
   from {
     transform: translateY(900px);
   }
@@ -183,17 +183,17 @@ const SlideToTop = keyframes`
   }
 `;
 const animationSpeed = '0.3s ease forwards';
-const ImageSlideRight = styled.div`
+const ImageSlideRight = window.styled.div`
   animation: ${SlideToRight} ${animationSpeed};
 `;
-const ImageSlideLeft = styled.div`
+const ImageSlideLeft = window.styled.div`
   animation: ${SlideToLeft} ${animationSpeed};
 `;
-const ImageSlideUp = styled.div`
+const ImageSlideUp = window.styled.div`
   animation: ${SlideToTop} ${animationSpeed}
 `;
 // Inner Image Zoom
-const InnerImageGlobalStyle = createGlobalStyle`
+const InnerImageGlobalStyle = window.styled.createGlobalStyle`
 .iiz {
   margin: 0;
   position: relative;

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { ScrollIndicatorBarWrapper, ScrollIndicatorButton } from '../Styles';
 
 function ScrollIndicator({ activeIndex, images, goToSlide }) {
   const percentage = activeIndex * 100;
   const scale = 1 / images.length;
-  const ScrollIndicatorBar = styled.span`
+  const ScrollIndicatorBar = window.styled.span`
     will-change: transform;
     background: #111;
     position: absolute;
