@@ -1,6 +1,52 @@
 // import styled, { createGlobalStyle, keyframes } from 'styled-components';
 
+// Product Summary
+const ProductSummary = window.styled.div`
+color: #666;
+font-family: 'Noto IKEA', 'Noto Sans', 'Roboto', 'Open Sans', -apple-system, sans-serif !important;
+margin-bottom: 3.75rem;
+`;
+const DescriptionText = window.styled.div`
+max-width: 33.125rem;
+padding-bottom: 1.25rem;
+`;
+const ProductIdentifierNumber = window.styled.span`
+display: inline-block;
+font-size: .75rem;
+line-height: 1.5;
+font-weight: 700;
+margin-right: 1.25rem;
+color: #111;
+display: inline-block;
+background: #f5f5f5;
+padding: .0625rem .625rem;
+`;
 // Main Item Grid Images
+const RangeMediaGridStyle = window.styled.div`
+position: relative;
+margin-bottom: 3.75rem;
+// width: 40vw;
+`;
+const Grid = window.styled.div`
+display: flex;
+flex-wrap: wrap;
+margin-left: -.625rem;
+margin-right: -.625rem;
+`;
+const RangeRevampMediaGridMediaContainer = window.styled.div`
+flex: none;
+margin-left: .625rem;
+margin-right: .625rem;
+width: calc(50% - 1.25rem);
+margin-bottom: 1.25rem;
+`;
+const RangeRevampAspectRatioImage = window.styled.div`
+width: 100%;
+position: relative;
+height: auto;
+display: block;
+box-sizing: border-box;
+`;
 const Img = window.styled.img`
   object-fit: cover;
   width: 100%;
@@ -11,31 +57,6 @@ const Img = window.styled.img`
   max-width: 100%;
   cursor: pointer;
   `;
-const RangeMediaGridStyle = window.styled.div`
-  position: relative;
-  margin-bottom: 3.75rem;
-  width: 40vw;
-`;
-const Grid = window.styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -.625rem;
-  margin-right: -.625rem;
-`;
-const RangeRevampAspectRatioImage = window.styled.div`
-  width: 100%;
-  position: relative;
-  height: auto;
-  display: block;
-  box-sizing: border-box;
-`;
-const RangeRevampMediaGridMediaContainer = window.styled.div`
-  flex: none;
-  margin-left: .625rem;
-  margin-right: .625rem;
-  width: calc(50% - 1.25rem);
-  margin-bottom: 1.25rem;
-`;
 // Show more images Button
 const Button = window.styled.button`
   display: block;
@@ -312,7 +333,7 @@ const InnerImageGlobalStyle = window.styled.createGlobalStyle`
 `;
 
 export {
-  Img, RangeMediaGridStyle, Grid,
+  ProductSummary, DescriptionText, ProductIdentifierNumber, Img, RangeMediaGridStyle, Grid,
   RangeRevampAspectRatioImage, RangeRevampMediaGridMediaContainer, Button,
   SpanButtonCopy, ButtonLabel, ModalContainer, GlobalModalStyle,
   ModalMain, ModalTitleContainer, CloseIcon, CarouselImage, CarouselArrow,

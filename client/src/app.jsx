@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import RangeMediaGrid from './RangeMediaGrid';
 import Modal from './Modal/ModalDashboard';
+import { ProductSummary, DescriptionText, ProductIdentifierNumber } from './Styles';
 
 class App extends Component {
   constructor(props) {
@@ -11,6 +12,8 @@ class App extends Component {
       isCollapsed: true,
       show: false,
       modalPicture: '',
+      description: '',
+      productIdentifier: '',
     };
     this.getImages = this.getImages.bind(this);
     this.handleShowMoreClick = this.handleShowMoreClick.bind(this);
@@ -25,8 +28,10 @@ class App extends Component {
     axios.get(`pictures${window.location.pathname}`)
       .then((response) => {
         response.data.forEach((imageObj) => {
-          this.setState(({ images }) => ({
+          this.setState(({ images, productIdentifier }) => ({
             images: images.concat(imageObj),
+            description: imageObj.description,
+            productIdentifier: `${String(productIdentifier)}${String(imageObj.description_id)}.`,
           }
           ));
         });
@@ -59,7 +64,7 @@ class App extends Component {
 
   render() {
     const {
-      images, isCollapsed, show, modalPicture,
+      images, isCollapsed, show, modalPicture, description, productIdentifier,
     } = this.state;
     return (
       <div>
@@ -74,6 +79,10 @@ class App extends Component {
         <div>
           <Modal show={show} images={images} openImage={modalPicture} onClose={this.showModal} />
         </div>
+        <ProductSummary>
+          <DescriptionText>{description}</DescriptionText>
+          <ProductIdentifierNumber>{productIdentifier.slice(0, -1)}</ProductIdentifierNumber>
+        </ProductSummary>
       </div>
     );
   }
