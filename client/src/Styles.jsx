@@ -68,12 +68,17 @@ const Button = window.styled.button`
   line-height: 1.33333;
   font-weight: 700;
   box-sizing: border-bow;
-  transition-property: background-color;
+  // transition-property: background-color;
   transition-timing-function: ease;
+  transition: 0.2s;
   cursor: pointer;
   border-radius: 40px;
   border: 0;
   outline: 0;
+
+  &:hover {
+    background-color: rgb(206, 206, 206);
+  }
   `;
 const SpanButtonCopy = window.styled.span`
   display: flex;
@@ -128,9 +133,21 @@ const ModalTitleContainer = window.styled.div`
 `;
 // Close Modal Icon
 const CloseIcon = window.styled.svg`
-height: 1rem;
-width: 1rem;
-cursor: pointer;
+  height: 1rem;
+  width: 1rem;
+  cursor: pointer;
+  background: rgba(0,0,0,0);
+  border-radius: 50%;
+  padding: 10px;
+
+  -webkit-transition: background 0.1s ease;
+  -moz-transition: background 0.1s ease;
+  -o-transition: background 0.1s ease;
+  transition: background 0.1s ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
 `;
 // Carousel Images NO LONGER USED. Moved to InnerImageGlobalStyle:
 const CarouselImage = window.styled.img`
@@ -154,6 +171,18 @@ const CarouselArrow = window.styled.div`
   ${CarouselContent}:hover & {
     opacity: 1;
   }
+  background: rgba(0,0,0,0);
+  border-radius: 50%;
+  padding: 10px;
+
+  -webkit-transition: background 0.1s ease;
+  -moz-transition: background 0.1s ease;
+  -o-transition: background 0.1s ease;
+  transition: background 0.1s ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
 `;
 // Carousel Scroll Bar
 // Scroll Indicator Bar found inline.
