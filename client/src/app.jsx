@@ -11,6 +11,8 @@ class App extends Component {
       isCollapsed: true,
       show: false,
       modalPicture: '',
+      description: '',
+      productIdentifierNumber: 0,
     };
     this.getImages = this.getImages.bind(this);
     this.handleShowMoreClick = this.handleShowMoreClick.bind(this);
@@ -27,6 +29,7 @@ class App extends Component {
         response.data.forEach((imageObj) => {
           this.setState(({ images }) => ({
             images: images.concat(imageObj),
+            description: imageObj.description,
           }
           ));
         });
@@ -58,8 +61,18 @@ class App extends Component {
   }
 
   render() {
+    const DescriptionText = window.styled.div`
+    color: #666;
+    font-family: 'Noto IKEA', 'Noto Sans', 'Roboto', 'Open Sans', -apple-system, sans-serif !important;
+    margin-bottom: 3.75rem;
+    max-width: 33.125rem;
+    padding-bottom: 1.25rem;
+    `;
+    const ProductIdentifierNumber = window.styled.div`
+
+    `;
     const {
-      images, isCollapsed, show, modalPicture,
+      images, isCollapsed, show, modalPicture, description,
     } = this.state;
     return (
       <div>
@@ -74,6 +87,7 @@ class App extends Component {
         <div>
           <Modal show={show} images={images} openImage={modalPicture} onClose={this.showModal} />
         </div>
+        <DescriptionText>{description}</DescriptionText>
       </div>
     );
   }
