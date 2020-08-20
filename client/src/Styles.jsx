@@ -1,5 +1,26 @@
 // import styled, { createGlobalStyle, keyframes } from 'styled-components';
 
+// Product Summary
+const ProductSummary = window.styled.div`
+color: #666;
+font-family: 'Noto IKEA', 'Noto Sans', 'Roboto', 'Open Sans', -apple-system, sans-serif !important;
+margin-bottom: 3.75rem;
+`;
+const DescriptionText = window.styled.div`
+max-width: 33.125rem;
+padding-bottom: 1.25rem;
+`;
+const ProductIdentifierNumber = window.styled.span`
+display: inline-block;
+font-size: .75rem;
+line-height: 1.5;
+font-weight: 700;
+margin-right: 1.25rem;
+color: #111;
+display: inline-block;
+background: #f5f5f5;
+padding: .0625rem .625rem;
+`;
 // Main Item Grid Images
 const Img = window.styled.img`
   object-fit: cover;
@@ -312,7 +333,7 @@ const InnerImageGlobalStyle = window.styled.createGlobalStyle`
 `;
 
 export {
-  Img, RangeMediaGridStyle, Grid,
+  ProductSummary, DescriptionText, ProductIdentifierNumber, Img, RangeMediaGridStyle, Grid,
   RangeRevampAspectRatioImage, RangeRevampMediaGridMediaContainer, Button,
   SpanButtonCopy, ButtonLabel, ModalContainer, GlobalModalStyle,
   ModalMain, ModalTitleContainer, CloseIcon, CarouselImage, CarouselArrow,
