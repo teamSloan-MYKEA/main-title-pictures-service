@@ -22,6 +22,31 @@ background: #f5f5f5;
 padding: .0625rem .625rem;
 `;
 // Main Item Grid Images
+const RangeMediaGridStyle = window.styled.div`
+position: relative;
+margin-bottom: 3.75rem;
+width: 40vw;
+`;
+const Grid = window.styled.div`
+display: flex;
+flex-wrap: wrap;
+margin-left: -.625rem;
+margin-right: -.625rem;
+`;
+const RangeRevampMediaGridMediaContainer = window.styled.div`
+flex: none;
+margin-left: .625rem;
+margin-right: .625rem;
+width: calc(50% - 1.25rem);
+margin-bottom: 1.25rem;
+`;
+const RangeRevampAspectRatioImage = window.styled.div`
+width: 100%;
+position: relative;
+height: auto;
+display: block;
+box-sizing: border-box;
+`;
 const Img = window.styled.img`
   object-fit: cover;
   width: 100%;
@@ -32,31 +57,6 @@ const Img = window.styled.img`
   max-width: 100%;
   cursor: pointer;
   `;
-const RangeMediaGridStyle = window.styled.div`
-  position: relative;
-  margin-bottom: 3.75rem;
-  width: 40vw;
-`;
-const Grid = window.styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -.625rem;
-  margin-right: -.625rem;
-`;
-const RangeRevampAspectRatioImage = window.styled.div`
-  width: 100%;
-  position: relative;
-  height: auto;
-  display: block;
-  box-sizing: border-box;
-`;
-const RangeRevampMediaGridMediaContainer = window.styled.div`
-  flex: none;
-  margin-left: .625rem;
-  margin-right: .625rem;
-  width: calc(50% - 1.25rem);
-  margin-bottom: 1.25rem;
-`;
 // Show more images Button
 const Button = window.styled.button`
   display: block;
