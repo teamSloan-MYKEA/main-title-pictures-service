@@ -28,7 +28,8 @@ class App extends Component {
     axios.get(`pictures${window.location.pathname}`)
       .then((response) => {
         response.data.forEach((imageObj) => {
-          const randomDescriptionNumber = imageObj.description_id * Math.floor((Math.random() * 100));
+          const randomDescriptionNumber = imageObj.description_id
+            * Math.floor((Math.random() * 100));
           this.setState(({ images, productIdentifier }) => ({
             images: images.concat(imageObj),
             description: imageObj.description,
