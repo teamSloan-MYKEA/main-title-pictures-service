@@ -17,6 +17,10 @@ app.get('/:id/pictures/:id', (req, res) => {
     .catch(() => res.status(500).send('Internal Server Error'));
 });
 
+app.get('/', (req, res) => {
+  res.send('Hello from Product Pictures.');
+});
+
 app.listen(port, () => {
   console.log(`Main-title-pictures-service listening at http://localhost:${port}`);
 });
