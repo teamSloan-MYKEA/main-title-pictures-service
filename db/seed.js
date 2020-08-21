@@ -4,7 +4,7 @@ const faker = require('faker');
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-  host: 'ip-172-31-26-212',
+  host: 'localhost',
   user: 'root',
   password: '',
   database: 'mykea_main_title_pictures',
