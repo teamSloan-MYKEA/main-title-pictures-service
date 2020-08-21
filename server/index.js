@@ -22,5 +22,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Main-title-pictures-service listening at http://localhost:${port}`);
+  console.log(`Main-title-pictures-service listening at port: ${port}`);
 });
