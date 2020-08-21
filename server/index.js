@@ -1,12 +1,12 @@
 const express = require('express');
 const path = require('path');
-// const cors = require('cors');
+const cors = require('cors');
 const db = require('../db/index.js');
 
 const app = express();
 const port = process.env.PORT || 3000;
 // Not sure if CORS is needed:
-// app.use(cors());
+app.use(cors());
 
 app.use('/:id', express.static(path.join(__dirname, '..', '/public')));
 
