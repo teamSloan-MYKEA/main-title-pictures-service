@@ -21,6 +21,12 @@ app.get('/', (req, res) => {
   res.send('Hello from Product Pictures.');
 });
 
+app.post();
+
+app.put();
+
+app.delete();
+
 app.listen(port, () => {
   console.log(`Main-title-pictures-service listening at port: ${port}`);
 });
