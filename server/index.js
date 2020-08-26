@@ -30,7 +30,6 @@ app.put('/', (req, res) => {
 });
 
 app.delete('/:id', (req, res) => {
-  console.log('Hello from Delete, ', req.body);
   db.deleteItem(req.params.id);
   res.send(req.body);
 });

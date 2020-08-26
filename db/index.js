@@ -64,14 +64,18 @@ const updateItem = (item) => new Promise((resolve, reject) => {
 // below is just copied, but represents the delete function
 // update to delete from table_name where col=val
 const deleteItem = (id) => new Promise((resolve, reject) => {
-  const sql = `SELECT * FROM pictures p INNER JOIN descriptions d
-              ON p.description_id = ${id} AND
-              p.description_id = d.id LIMIT 6`;
-  connection.query(sql, (err, results) => {
+  const sql1 = `DELETE FROM descriptions WHERE id=${id}`;
+  const sql2 = `DELETE FROM pictures WHERE description_id=${id}`;
+  connection.query(sql2, (err, results) => {
     if (err) {
       return reject(err);
     }
-    return resolve(results);
+    connection.query(sql1, (err, results) => {
+      if (err) {
+        return reject(err);
+      }
+      return resolve(results);
+    });
   });
 });
 
