@@ -7,13 +7,13 @@
   - https://github.com/hrr47-fec-omalley/reviews-service
   - https://github.com/hrr47-fec-omalley/similar-products-service
   - https://github.com/hrr47-fec-omalley/add-to-bag-service
-  - https://github.com/hrr47-fec-omalley/main-title-pictures-service
 
 ## Table of Contents
 
 1. [Usage](#Usage)
 2. [Requirements](#requirements)
 3. [Development](#development)
+4. [Endpoints](#endpoints)
 
 ## Usage
 
@@ -42,3 +42,19 @@ npm install -g webpack
 npm install
 ```
 
+## Endpoints
+
+### GET - /:id/pictures/:id
+Returns one set of pictures from the database
+
+### GET - /
+Test for connectivity
+
+### POST - /
+Test for connectivity
+
+### PUT - /:id
+Test for connectivity
+
+### DELETE - /:id
+Test for connectivity
