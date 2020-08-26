@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const db = require('../db/index.js');
+const bodyparser = require('body-parser');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -18,14 +19,24 @@ app.get('/:id/pictures/:id', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Hello from Product Pictures.');
+  console.log('Hello from Get');
+  res.send(req.body);
 });
 
-app.post();
+app.post('/', (req, res) => {
+  console.log('Hello from Post');
+  res.send(req.body);
+});
 
-app.put();
+app.put('/:id', (req, res) => {
+  console.log('Hello from Put');
+  res.send(req.body);
+});
 
-app.delete();
+app.delete('/:id', (req, res) => {
+  console.log('Hello from Delete');
+  res.send(req.body);
+});
 
 app.listen(port, () => {
   console.log(`Main-title-pictures-service listening at port: ${port}`);
