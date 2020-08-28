@@ -7,6 +7,7 @@ const bodyparser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 // Not sure if CORS is needed:
+app.use(bodyparser());
 app.use(cors());
 
 app.use('/:id', express.static(path.join(__dirname, '..', '/public')));
@@ -18,23 +19,18 @@ app.get('/:id/pictures/:id', (req, res) => {
     .catch(() => res.status(500).send('Internal Server Error'));
 });
 
-app.get('/', (req, res) => {
-  console.log('Hello from Get');
-  res.send(req.body);
-});
-
 app.post('/', (req, res) => {
-  console.log('Hello from Post');
+  db.addItem(req.body);
   res.send(req.body);
 });
 
-app.put('/:id', (req, res) => {
-  console.log('Hello from Put');
+app.put('/', (req, res) => {
+  db.updateItem(req.body);
   res.send(req.body);
 });
 
 app.delete('/:id', (req, res) => {
-  console.log('Hello from Delete');
+  db.deleteItem(req.params.id);
   res.send(req.body);
 });
 

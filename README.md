@@ -45,16 +45,28 @@ npm install
 ## Endpoints
 
 ### GET - /:id/pictures/:id
-Returns one set of pictures from the database
-
-### GET - /
-Test for connectivity
+Takes in an id from req.params.id and returns one set of pictures from the database.
 
 ### POST - /
-Test for connectivity
+Takes in an object in the body in the below form and creates a new record in the database.
+
+{
+  description: string with description of item,
+  picture1: url to picture one,
+  picture2: url to picture two,
+  picture3: url to picture three,
+  picture4: url to picture four,
+  picture5: url to picture five,
+  picture6: url to picture six
+}
 
 ### PUT - /:id
-Test for connectivity
+Takes in an object in the body in the below form and updates a record in the database.
+{
+  table: must be 'pictures' or 'descriptions',
+  id: item id to update,
+  update: text to update
+}
 
 ### DELETE - /:id
-Test for connectivity
+Takes in an id from req.params.id and deletes the item in the database.
