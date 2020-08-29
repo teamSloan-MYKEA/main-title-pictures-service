@@ -7,38 +7,33 @@ const client = new Client({
   database: "sdc_mykea"
 });
 
-var copyFirst = function() {
-  client.connect();
-  client.query(
-    `DROP TABLE IF EXISTS pictures_service;
-    CREATE TABLE pictures_service (
-      id bigserial primary key,
-      description varchar(400),
-      picture1 varchar(60),
-      picture2 varchar(60),
-      picture3 varchar(60),
-      picture4 varchar(60),
-      picture5 varchar(60),
-      picture6 varchar(60)
-    );
-    COPY pictures_service (
-      description,
-      picture1,
-      picture2,
-      picture3,
-      picture4,
-      picture5,
-      picture6
-    ) FROM '/var/lib/postgresql/data/pictures1.csv'
-    WITH (format csv)`,
-    (err, res) => {
-      console.log(err ? err.stack : 'table pictures_service up and seeded');
-      client.end();
-    }
-  );
-}
 
-module.exports = {
-  client,
-  copyFirst
-};
+client.connect();
+client.query(
+  `DROP TABLE IF EXISTS pictures_service;
+  CREATE TABLE pictures_service (
+    id bigserial primary key,
+    description varchar(400),
+    picture1 varchar(60),
+    picture2 varchar(60),
+    picture3 varchar(60),
+    picture4 varchar(60),
+    picture5 varchar(60),
+    picture6 varchar(60)
+  );
+  COPY pictures_service (
+    description,
+    picture1,
+    picture2,
+    picture3,
+    picture4,
+    picture5,
+    picture6
+  ) FROM '/var/lib/postgresql/data/pictures.csv'
+  WITH (format csv)`,
+  (err, res) => {
+    console.log(err ? err.stack : 'table pictures_service up and seeded seedPostgres');
+    client.end();
+  }
+);
+
