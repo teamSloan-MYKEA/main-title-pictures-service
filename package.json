@@ -12,7 +12,7 @@
     "seed": "node db/seed.js",
     "schema": "mysql < db/schema.sql",
     "test": "jest",
-    "bigdata": "node ./data/createDataCSV.js"
+    "bigdata": "node ./data/createDataCSV.js && node ./data/createDataCSV.js && node ./data/createDataCSV.js && node ./data/createDataCSV.js && node ./data/createDataCSV.js && node ./data/createDataCSV.js && node ./data/createDataCSV.js && node ./data/createDataCSV.js && node ./data/createDataCSV.js && node ./data/createDataCSV.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
