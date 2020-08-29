@@ -5,8 +5,9 @@
 npm
 npm-debug.log
 node_modules/
-data/
-db/pictures.csv
+data/postgres_data/
+data/cassandra_data/
+data/cassandra_data2/
 
 pids
 *.pid
