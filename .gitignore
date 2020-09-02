@@ -26,4 +26,8 @@ build/
 dist/
 
 # Data directories for Docker
-data/
+data/cassandra_data
+data/cassandra_data2
+data/postgres_data
+data/cassandra-loader
+picturesall.csv
