@@ -12,7 +12,7 @@
     "seed": "node db/seed.js",
     "schema": "mysql < db/schema.sql",
     "test": "jest",
-    "bigdata": "node ./data/createDataCSV.js"
+    "bigdatafill": "node ./data/createDataCSV.js && node ./db/seedPostgres.js && rm ./data/postgres_data/pictures.csv && node ./data/createDataCSV.js && node ./db/seedPostgres2.js && rm ./data/postgres_data/pictures.csv && node ./data/createDataCSV.js && node ./db/seedPostgres2.js && rm ./data/postgres_data/pictures.csv && node ./data/createDataCSV.js && node ./db/seedPostgres2.js && rm ./data/postgres_data/pictures.csv && node ./data/createDataCSV.js && node ./db/seedPostgres2.js && rm ./data/postgres_data/pictures.csv && node ./data/createDataCSV.js && node ./db/seedPostgres2.js && rm ./data/postgres_data/pictures.csv && node ./data/createDataCSV.js && node ./db/seedPostgres2.js && rm ./data/postgres_data/pictures.csv && node ./data/createDataCSV.js && node ./db/seedPostgres2.js && rm ./data/postgres_data/pictures.csv && node ./data/createDataCSV.js && node ./db/seedPostgres2.js && rm ./data/postgres_data/pictures.csv && node ./data/createDataCSV.js && node ./db/seedPostgres2.js && rm ./data/postgres_data/pictures.csv"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
@@ -20,6 +20,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
+    "cassandra-driver": "^4.6.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "faker": "^4.1.0",

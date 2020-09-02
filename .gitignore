@@ -5,8 +5,7 @@
 npm
 npm-debug.log
 node_modules/
-data/
-db/pictures.csv
+
 
 pids
 *.pid
@@ -26,3 +25,9 @@ coverage
 build/
 dist/
 
+# Data directories for Docker
+data/cassandra_data
+data/cassandra_data2
+data/postgres_data
+data/cassandra-loader
+picturesall.csv
