@@ -93,7 +93,7 @@ const deleteItem = (id) => new Promise((resolve, reject) => {
   });
 });
 
-module.exports.connection = connection;
+module.exports.connection = client;
 module.exports.getPictures = getPictures;
 module.exports.addItem = addItem;
 module.exports.updateItem = updateItem;

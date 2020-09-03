@@ -15,7 +15,9 @@ app.use('/:id', express.static(path.join(__dirname, '..', '/public')));
 // Use express params
 app.get('/:id/pictures/:id', (req, res) => {
   db.getPictures(req.params.id)
-    .then((urls) => res.send(urls))
+    .then((urls) => {
+      res.send(Object.values(urls.rows[0]));
+    })
     .catch(() => res.status(500).send('Internal Server Error'));
 });
 
