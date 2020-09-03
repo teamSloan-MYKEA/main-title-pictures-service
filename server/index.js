@@ -16,7 +16,40 @@ app.use('/:id', express.static(path.join(__dirname, '..', '/public')));
 app.get('/:id/pictures/:id', (req, res) => {
   db.getPictures(req.params.id)
     .then((urls) => {
-      res.send(Object.values(urls.rows[0]));
+      // mocked up in order to not change any front end
+      const urlSetter = [
+        {
+          id: req.params.id,
+          url: Object.values(urls.rows[0])[1],
+          description_id: req.params.id,
+          description: Object.values(urls.rows[0])[0],
+        },
+        {
+          id: req.params.id,
+          url: Object.values(urls.rows[0])[2],
+          description_id: req.params.id,
+          description: Object.values(urls.rows[0])[0],
+        },
+        {
+          id: req.params.id,
+          url: Object.values(urls.rows[0])[3],
+          description_id: req.params.id,
+          description: Object.values(urls.rows[0])[0],
+        },
+        {
+          id: req.params.id,
+          url: Object.values(urls.rows[0])[4],
+          description_id: req.params.id,
+          description: Object.values(urls.rows[0])[0],
+        },
+        {
+          id: req.params.id,
+          url: Object.values(urls.rows[0])[5],
+          description_id: req.params.id,
+          description: Object.values(urls.rows[0])[0],
+        },
+      ]
+      res.send(urlSetter);
     })
     .catch(() => res.status(500).send('Internal Server Error'));
 });
