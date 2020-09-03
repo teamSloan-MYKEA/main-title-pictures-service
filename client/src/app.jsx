@@ -27,17 +27,10 @@ class App extends Component {
   getImages() {
     axios.get(`pictures${window.location.pathname}`)
       .then((response) => {
-        // we need to parse this out and send it back somehow on the server
-        // pretty much needless complexity but it shouldn't be hard to get it
-        // back in order. It looks like we are looking for an array of objects
-        // with properties of description_id, images, productIdentifier?
-        // seems right, not sure
         response.data.forEach((imageObj) => {
-          alert(imageObj); // currently receiving 6 alerts with urls
           const randomDescriptionNumber = imageObj.description_id
             * Math.floor((Math.random() * 100));
           this.setState(({ images, productIdentifier }) => ({
-            // so we are doing a setState for each individual image?
             images: images.concat(imageObj),
             description: imageObj.description,
             productIdentifier: `${String(productIdentifier)}${String(randomDescriptionNumber)}.`,
