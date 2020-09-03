@@ -7,17 +7,19 @@ const client = new Client({
   database: "sdc_mykea"
 });
 
+client.connect();
+
+//
+// Probably need to refactor to pull out client.connect and have it up here
+//
+
 const getPictures = (id) => new Promise((resolve, reject) => {
-  const sql = `SELECT picture1, picture2, picture3, picture4, picture5, picture6 FROM pictures_service WHERE id=${id}`;
-  client.connect().then(() => {
-    client.query(sql, (err, results) => {
-      if (err) {
-        client.end();
-        return reject(err);
-      }
-      client.end();
-      return resolve(results);
-    });
+  const sql = `SELECT description, picture1, picture2, picture3, picture4, picture5, picture6 FROM pictures_service WHERE id=${id}`;
+  client.query(sql, (err, results) => {
+    if (err) {
+      return reject(err);
+    }
+    return resolve(results);
   });
 });
 
@@ -50,47 +52,36 @@ const addItem = (item) => new Promise((resolve, reject) => {
     picture5,
     picture6
   ) VALUES (?)`;
-  client.connect().then(() => {
-    client.query(sql1, queryArray, (err, results) => {
-      if (err) {
-        client.end();
-        return reject(err);
-      }
-        client.end();
-        return resolve(results);
-    });
+  client.query(sql1, queryArray, (err, results) => {
+    if (err) {
+      return reject(err);
+    }
+      return resolve(results);
   });
+
 });
 
 // update table_name set col=val where col=val
 const updateItem = (item) => new Promise((resolve, reject) => {
   const {field, id, update} = item;
   const sql2 = `UPDATE pictures_service SET ${field}='${update}' WHERE id=${id}`;
-  client.connect().then(() => {
-    client.query(sql2, (err, results) => {
-      if (err) {
-        client.end();
-        return reject(err);
-      }
-      client.end();
-      return resolve(results);
-    });
+  client.query(sql2, (err, results) => {
+    if (err) {
+      return reject(err);
+    }
+    return resolve(results);
   });
 });
 
 // update to delete from table_name where col=val
 const deleteItem = (id) => new Promise((resolve, reject) => {
   const sql13 = `DELETE FROM pictures_service WHERE id=${id}`;
-  client.connect().then(() => {
     client.query(sql3, (err, results) => {
       if (err) {
-        client.end();
         return reject(err);
       }
-      client.end();
       return resolve(results);
     });
-  });
 });
 
 module.exports.connection = client;
