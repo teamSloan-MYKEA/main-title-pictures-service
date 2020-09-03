@@ -16,8 +16,6 @@ const query2 = `CREATE TABLE IF NOT EXISTS sdc_mykea.pictures_service (
     picture5 text,
     picture6 text
   );`;
-// can't do the following from the command line, so choice is to programmatically insert or if I can make a cqlsh golf swing from command line
-//const query3 = `COPY sdc_mykea.pictures_service (description, picture1, picture2, picture3, picture4, picture5, picture6, default) FROM '/var/lib/cassandra/pictures.csv';`;
 
 client.connect()
   .then(() => console.log('success'))
