@@ -31,4 +31,6 @@ data/cassandra_data2
 data/postgres_data
 data/cassandra-loader
 picturesall.csv
-public/bundle.js
+bundle.*
+newrelic.js
+report.json

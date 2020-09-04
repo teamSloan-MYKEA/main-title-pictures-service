@@ -34,15 +34,7 @@ const addItem = (item) => new Promise((resolve, reject) => {
     picture6,
     description
   } = item;
-  const queryArray = [
-    description,
-    picture1,
-    picture2,
-    picture3,
-    picture4,
-    picture5,
-    picture6
-  ];
+
   const sql1 = `INSERT INTO pictures_service (
     description,
     picture1,
@@ -51,8 +43,8 @@ const addItem = (item) => new Promise((resolve, reject) => {
     picture4,
     picture5,
     picture6
-  ) VALUES (?)`;
-  client.query(sql1, queryArray, (err, results) => {
+  ) VALUES (${description},${picture1},${picture2},${picture3},${picture4},${picture5},${picture6})`;
+  client.query(sql1, (err, results) => {
     if (err) {
       return reject(err);
     }
