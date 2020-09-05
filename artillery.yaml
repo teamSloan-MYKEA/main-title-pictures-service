@@ -2,16 +2,16 @@ config:
   target: "http://localhost:3000"
   phases:
     - duration: 60
-      arrivalRate: 1
-      rampTo: 100
+      arrivalRate: 5
+      maxVusers: 1000
       name: Warm up
     - duration: 60
-      arrivalRate: 1
-      rampTo: 100
+      arrivalRate: 150
+      maxVusers: 1000
       name: Ramp up load
     - duration: 60
-      arrivalRate: 1
-      rampTo: 100
+      arrivalRate: 150
+      maxVusers: 1000
       name: Sustained load
   payload:
     # Load productIds from an external CSV file and make them available

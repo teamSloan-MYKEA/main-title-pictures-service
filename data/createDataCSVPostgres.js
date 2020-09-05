@@ -22,7 +22,7 @@ function randomPictureItem() {
 
 var writeArray = [];
 
-var stream = fs.createWriteStream(`./data/postgres_data/pictures.csv`, {flags: 'as+'});
+var stream = fs.createWriteStream(`./data/postgres_data/pictures9.csv`, {flags: 'as+'});
 for (var i = 1; i < 1000001; i++) {
   var randomItem = randomPictureItem();
   writeArray.push(new Promise(() => stream.write(`${randomItem.description},${randomItem.picture1},${randomItem.picture2},${randomItem.picture3},${randomItem.picture4},${randomItem.picture5},${randomItem.picture6}\n`)));
