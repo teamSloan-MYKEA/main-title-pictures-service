@@ -1,15 +1,20 @@
+require('newrelic');
+
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const db = require('../db/index.js');
 const bodyparser = require('body-parser');
+const compression = require('compression');
 
 const app = express();
 const port = process.env.PORT || 3000;
 // Not sure if CORS is needed:
+app.use(compression());
 app.use(bodyparser());
 app.use(cors());
 
+app.use('/', express.static(path.join(__dirname, '..', '/public')));
 app.use('/:id', express.static(path.join(__dirname, '..', '/public')));
 
 // Use express params
