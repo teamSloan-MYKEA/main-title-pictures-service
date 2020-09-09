@@ -1,25 +1,58 @@
 const { Client } = require('pg');
 const client = new Client({
-  host: "localhost",
+  host: "18.222.255.10",
   port: 5432,
   user: "postgres",
   password: "password",
   database: "sdc_mykea"
 });
-
+const redis = require('redis');
+const redisClient = redis.createClient();
 client.connect();
+
+redis.debug = true;
+redisClient.on('error', function(err) {
+  console.log('error' + err);
+});
 
 //
 // Probably need to refactor to pull out client.connect and have it up here
 //
 
+const getCachedPictures = (query, callback) => {
+  redisClient.get(query, function(err, results) {
+    if (err || !results) {
+      return callback(err);
+    }
+    return callback(null, JSON.parse(results));
+  });
+};
+
+const setCachedPictures = (query, data, callback) => {
+  redisClient.set(query, data, (err, results) => {
+    if (err) {
+      return callback(err);
+    }
+    return callback(null, results);
+  });
+};
+
 const getPictures = (id) => new Promise((resolve, reject) => {
   const sql = `SELECT description, picture1, picture2, picture3, picture4, picture5, picture6 FROM pictures_service WHERE id=${id}`;
-  client.query(sql, (err, results) => {
-    if (err) {
-      return reject(err);
+  getCachedPictures(sql, function(err, results) {
+    if (!err) {
+      return client.query(sql, (err, queryResults) => {
+        if (err) {
+          return reject(err);
+        }
+        setCachedPictures(sql, JSON.stringify(queryResults.rows[0]), (err, results) => {
+          if (err) {
+            return reject(err);
+          }
+          return resolve(queryResults);
+        });
+      });
     }
-    return resolve(results);
   });
 });
 
