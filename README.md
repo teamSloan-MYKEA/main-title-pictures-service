@@ -20,10 +20,10 @@
 > Run `npm install` to install all dependancies (will also install Dev dependancies). To install for deployment, run `npm install --production`.
 
 > `run schema` will drop DB and create a new DB with tables.
-> `node db/seed.js` will seed the DB with random products.
+> `node db/seed.js` will seed the DB with products.
 
-> `npm run build` will build webpack and watch files.
-> `npm run server` starts nodemon and server and watches for changes.
+> `npm run build` will run webpack.
+> `npm run server` starts node server.
 
 ## Requirements
 
@@ -39,7 +39,7 @@ From within the root directory:
 
 ```sh
 npm install -g webpack
-npm install
+npm run server
 ```
 
 ## Endpoints
