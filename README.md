@@ -1,6 +1,6 @@
 # Project Name
 
-> MYKEA Main Pictures Display and Carousel Modal
+> IndoorAdventures Main Pictures Display and Carousel Modal
 
 ## Related Projects
 
